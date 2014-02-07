@@ -1,0 +1,12 @@
+{
+  "config": {
+    "layoutTemplate": "mainLayout",
+    "notFoundTemplate": "notFound",
+    "loadingTemplate": "loading"
+  },
+
+  "routes": [
+    {"name": "home", "path": "/"},
+    {"name": "browse", "path": "/b/:path(*)"}
+  ]
+}

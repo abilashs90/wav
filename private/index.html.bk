@@ -1,0 +1,69 @@
+<head>
+  <title>WAV - from Goje87.com</title>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+</head>
+
+<body>
+{{> header}}
+
+{{> dirListing}}
+<div class="player js-player">
+  {{> player}}
+  {{> playerControls}}
+</div>  
+
+{{> footer}}
+</body>
+
+<template name="header">
+  <img src="/images/wav-logo.png" />
+  {{#if loading}}
+    <span>Loading...</span>
+  {{/if}}
+  <div class="message">{{message}}</div>
+</template>
+
+<template name="footer">
+  <div class="talign-center">
+    &copy; Goje87.com
+  </div>
+</template>
+
+<template name="dirListing">
+  <h1>Hello World!</h1>
+  <ul>
+    {{#each listing}}
+      <li class="{{type}}">
+        {{filename}}
+        <button class="add">+</button>
+      </li> 
+    {{/each}}
+  </ul>
+</template> 
+
+<template name="player">
+  <audio src="{{path}}" autoplay>
+      Your browser does not support audio player.
+  </audio>
+</template>
+
+<template name="playerControls">
+  <div class="player-controls">
+    <div class="player-progress-wrapper">
+      {{#isolate}}
+        <div class="player-progress-buffer" style="width: {{buffered}}%"></div>
+        <div class="player-progress" style="width: {{progress}}%"></div>
+      {{/isolate}}
+    </div>
+    <button class="player-play">Play</button>
+    <button class="player-pause">Pause</button>
+    <button class="player-prev">Prev</button>
+    <button class="player-next">Next</button>
+    [{{status}}]
+  </div>
+  <ul class="playlist">
+    {{#each list}}
+        <li>{{filename}}</li>
+    {{/each}}
+  </ul>
+</template>

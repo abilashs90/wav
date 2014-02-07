@@ -1,0 +1,50 @@
+.hidden {
+    display: none;
+}
+
+.dir .add {
+    display: none;
+}
+
+.player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.player .playlist {
+    margin-bottom: 0;
+    list-style-type: none;
+    padding-left: 10px;
+    height: 145px;
+    overflow: auto;
+}
+
+.player-progress-wrapper {
+    height: 5px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.player-progress-wrapper .player-progress {
+    height: 100%;
+    width: 0;
+    background-color: rgba(255, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.player-progress-wrapper .player-progress-buffer {
+    height: 100%;
+    width: 0;
+    background-color: rgba(255, 0, 0, 0.25);
+    position: absolute;
+    top: 0;
+    left: 0;
+}

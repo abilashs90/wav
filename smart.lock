@@ -7,7 +7,8 @@
         "branch": "master"
       },
       "scss": {},
-      "iron-router": {}
+      "iron-router": {},
+      "klass": {}
     },
     "packages": {
       "fast-render": {
@@ -24,6 +25,11 @@
         "git": "https://github.com/EventedMind/iron-router.git",
         "tag": "v0.6.2",
         "commit": "ce56e58b45624dce992490f3a1c10f10d3948bae"
+      },
+      "klass": {
+        "git": "https://github.com/craigwedseltoft/meteor-klass.git",
+        "tag": "v1.3.0a",
+        "commit": "275a932a51f1bcf792aa5a013b7b5440a28332f6"
       }
     }
   }

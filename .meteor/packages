@@ -8,3 +8,6 @@ preserve-inputs
 scss
 fast-render
 iron-router
+klass
+accounts-base
+accounts-facebook

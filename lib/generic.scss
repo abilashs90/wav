@@ -1,19 +1,31 @@
-.talign-center  {
-  text-align: center;
-}
-
 $text-size-normal: 1rem;
-$text-size-big: 1.25rem;
+$text-size-large: 1.25rem;
 $text-size-small: 0.75rem;
 
 .tsize-normal {
   font-size: $text-size-normal;
 }
 
-.tsize-big {
-  font-size: $text-size-big;
+.tsize-large {
+  font-size: $text-size-large;
 }
 
 .tsize-small {
   font-size: $text-size-small;
+}
+
+.talign-center  {
+  text-align: center;
+}
+
+.valign-center {
+  vertical-align: middle;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
 }

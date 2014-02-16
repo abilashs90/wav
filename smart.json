@@ -4,6 +4,7 @@
       "git": "git://github.com/arunoda/meteor-fast-render.git"
     },
     "scss": {},
-    "iron-router": {}
+    "iron-router": {},
+    "klass": {}
   }
 }

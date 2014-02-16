@@ -1,0 +1,13 @@
+<template name="logout">
+  <div class="p-logout">
+    {{#if currentUser}}
+      <p>
+        Please wait while you're logged out...
+      </p>
+    {{else}}
+      <p>
+        <a href="{{redirectUrl}}">Click here</a> if you are not redirected for a long time...
+      </p>
+    {{/if}}
+  </div>
+</template>

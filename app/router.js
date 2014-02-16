@@ -2,13 +2,14 @@
 
   app.routerConfig({
     layoutTemplate: 'mainLayout',
-    notFoundTemplate: 'notFoundTemplate',
+    notFoundTemplate: 'notFound',
     loadingTemplate: 'loading'
   });
 
   app.routes([
     {name: 'home', path: '/'},
-    {name: 'browse', path: '/b/:path(*)'}
+    {name: 'browse', path: '/b/?:path(*)'},
+    {name: 'logout', path: '/logout'}
   ]);
 
 })(this);

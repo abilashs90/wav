@@ -1,5 +1,12 @@
 <template name="footer">
   <footer class="main-footer talign-center tsize-small">
-    &copy; Goje87.com
+    <div class="main-footer-upanel">
+      {{#if currentUser}}
+        <a class="ghook-user-logout pure-button m" href="/logout">logout</a>
+      {{/if}}
+    </div>
+    <div class="main-footer-copyrights">
+      &copy; Goje87.com
+    </div>
   </footer>
 </template>

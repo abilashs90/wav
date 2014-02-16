@@ -7,6 +7,7 @@
 
   "routes": [
     {"name": "home", "path": "/"},
+    {"name": "logout", "path": "/logout"},
     {"name": "browse", "path": "/b/:path(*)"}
   ]
 }

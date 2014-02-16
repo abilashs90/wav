@@ -3,14 +3,18 @@
     <table class="p-home-login-container full-height">
       <tr>
         <td class="talign-center valign-center">
-          <div class="p-home-login">
-            <p class="page-heading tsize-large">Login</p>
-            <form class="pure-form">
-              <fieldset class="pure-group">
-                <a class="pure-button pure-input-1 p-home-login-facebook">Login with Facebook</a>
-              </fieldset>
-            </form>
-          </div>
+          {{#if currentUser}}
+            Welcome {{currentUser}}
+          {{else}}
+            <div class="p-home-login">
+              <p class="page-heading tsize-large">Login</p>
+              <form class="pure-form">
+                <fieldset class="pure-group">
+                  <a class="pure-button pure-input-1 p-home-login-facebook">Login with Facebook</a>
+                </fieldset>
+              </form>
+            </div>
+          {{/if}}
         </td>
       </tr>
     </table>

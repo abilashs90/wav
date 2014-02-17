@@ -1,17 +1,17 @@
 app.definePage('logout', (function() {
 
-  var redirectUrl = '/';
+  var redirectTo = 'home';
 
   function logoutUser() {
     console.log('calling logoutUser');
     Meteor.logout(function() {
-      app.action('redirect', redirectUrl);
+      app.action('redirect', redirectTo);
     });
   }
 
   return {
     data: {
-      redirectUrl: redirectUrl
+      redirectUrl: app.url(redirectTo)
     },
     onPageRender: logoutUser
   }

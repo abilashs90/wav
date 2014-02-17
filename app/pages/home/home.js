@@ -1,19 +1,15 @@
 app.definePage('home', (function() {
-  app.action('callServerMethod', 'getUserId', function(error, userId) {
-      if(error) throw 'Error while checking if user is logged in. '+error;
-      console.log(userId);
-    });
 
-  var redirectUrl = '/b'; // redirect here when login is successful
+  var redirectTo = 'browse'; // redirect here when login is successful
 
   function loginWithFacebook() {
-    Meteor.loginWithFacebook({
+    app.action('loginUser', 'facebook', {
       requestOfflineToken: true
     }, function(error) {
 
       if(error) throw 'There was an error: '+error;
 
-      app.action('redirect', redirctUrl);
+      app.action('redirect', redirectTo);
     });
   }
 
@@ -22,11 +18,17 @@ app.definePage('home', (function() {
       if(error) throw 'Error while checking if user is logged in. '+error;
       if(!userId) return;
 
-      console.log(userId);
-
-      app.action('redirect', redirectUrl);
+      app.action('redirect', redirectTo);
     });
   }
+
+  app.on('newAppUserCreated', function(user) {
+    app.action('callServerMethod', 'loginOnAcsWithFacebook', user, function(err, data) {
+      if(err) throw 'There was an error while creating user accoung on ACS. ', err;
+
+      console.log(arguments);
+    });
+  });
 
   return {
     data: {

@@ -1,8 +1,15 @@
+function acsUrl(endpoint) {
+  var base = 'https://api.cloud.appcelerator.com/v1/',
+      appKey = 'zDzk2GfKPRNYu8mMB4NqccyRl1w0MAEn';
+
+  return base+endpoint+'.json?key='+appKey;
+}
+
 Meteor.methods({
   loginOnAcsWithFacebook: function() {
     var user = Meteor.user();
 
-    if(!user.services) return; 
+    if(!user.services) throw 'Cannot Find Services data';
 
     var type = 'facebook',
         serviceData = user.services[type],
@@ -10,14 +17,17 @@ Meteor.methods({
           id: serviceData.id,
           token: serviceData.accessToken,
           type: type
-        },
-        appKey = 'zDzk2GfKPRNYu8mMB4NqccyRl1w0MAEn';
+        };
 
 
     return HTTP.call(
-      'POST', 
-      'https://api.cloud.appcelerator.com/v1/users/external_account_login.json?key='+appKey,
+      'POST',
+      acsUrl('users/external_account_login'),
       {params: params }
     );
+  },
+
+  crateAlbum: function(data) {
+
   }
 });

@@ -1,0 +1,25 @@
+<template name="login">
+  <div class="p-login">
+    <table class="p-login-login-container full-height">
+      <tr>
+        <td class="talign-center valign-center">
+          {{#if currentUser}}
+            Welcome {{jsonString currentUser}}
+          {{else}}
+            <div class="p-login-login">
+              <p class="page-heading tsize-large">Login</p>
+              <form class="pure-form">
+                <fieldset class="pure-group">
+                  <a class="pure-button pure-input-1 p-login-button-facebook">
+                    <i class="icon-facebook"></i>
+                    Login with Facebook
+                  </a>
+                </fieldset>
+              </form>
+            </div>
+          {{/if}}
+        </td>
+      </tr>
+    </table>
+  </div>
+</template>

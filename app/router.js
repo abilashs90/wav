@@ -9,7 +9,11 @@
   app.routes([
     {name: 'home', path: '/'},
     {name: 'browse', path: '/b/?:path(*)'},
-    {name: 'logout', path: '/logout'}
+    {name: 'login', path: '/login'},
+    {name: 'logout', path: '/logout'},
+    {name: 'albums', path: '/albums'},
+    {name: 'newAlbum', path: '/album/create'},
+    {name: 'songs', path: '/songs'}
   ]);
 
   app.on('beforePageRender', function(route) {

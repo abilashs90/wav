@@ -1,26 +1,30 @@
-app.definePage('login', (function() {
+app.defineComponent({
+  name: 'login', 
+  api: function() {
 
-  function loginWithFacebook() {
-    app.action('loginUser', 'facebook', {
-      requestOfflineToken: true
-    },
-    function(error) {
-      if(error) throw error;
+    function loginWithFacebook() {
+      app.ask('login', 'facebook', {
+        requestOfflineToken: true
+      },
+      function(error) {
+        if(error) throw error;
 
-      alert('Login was successful');
-    });
-  }
-  
-  return {
-    data: {
-      jsonString: function(data) {
-        return JSON.stringify(data);
-      }
-    },
-    events: {
-      'click  .p-login-button-facebook': function() {
-        loginWithFacebook();
+        // on successful login, go to homepage.
+        app.action('redirect', 'home');
+      });
+    }
+
+    return {
+      data: {
+        jsonString: function(data) {
+          return JSON.stringify(data);
+        }
+      },
+      events: {
+        'click  .p-login-button-facebook': function() {
+          loginWithFacebook();
+        }
       }
     }
   }
-})());
+});

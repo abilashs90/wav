@@ -1,0 +1,23 @@
+.p-albums {
+
+  .p-albums-list {
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+
+  .p-albums-album {
+    list-style-type: none;
+  }
+
+  .p-albums-list-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: #333;
+    color: #eee;
+    padding: 5px;
+  }
+}

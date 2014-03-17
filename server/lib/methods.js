@@ -4,7 +4,6 @@ Meteor.methods({
   },
 
   getUser: function() {
-    console.log('returning user as ', Meteor.user());
     return Meteor.user();
   }
 });

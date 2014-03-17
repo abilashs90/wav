@@ -1,5 +1,10 @@
 <template name="home">
-  <div class="p-home">
-    <h1>Welcome</h1>
+  <div class="p-home p">
+    <div class="pure-menu pure-menu-open">
+      <ul>
+        <li><a href="{{pathFor 'albums'}}">Albums</a></li>
+        <li><a href="{{pathFor 'songs'}}">All Songs</a></li>
+      </ul>
+    </div>
   </div>
 </template>

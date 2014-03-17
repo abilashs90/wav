@@ -9,6 +9,7 @@ scss
 fast-render
 iron-router
 klass
-accounts-base
 accounts-facebook
 http
+accounts-base
+service-configuration

@@ -1,0 +1,29 @@
+<template name="albums">
+  <div class="p p-albums">
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <span class="pure-menu-heading">Albums</span>
+      <ul>
+        <li>
+          <a href="{{pathFor 'newAlbum'}}">
+            <i class="icon-plus"></i> New
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <ul class="p-albums-list">
+      {{#if listMessage}}
+        <div class="p-albums-list-message">{{listMessage}}</div>
+      {{/if}}
+      {{#each albums}}
+        <li>
+          <a class="p-albums-album card block" href="{{pathFor 'album'}}">
+            <div class="p">
+              {{title}} ({{year}})
+            </div>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</template>

@@ -1,18 +1,19 @@
-app.definePage('logout', (function() {
+app.defineComponent({
+  name: 'logout', 
+  api: function() {
+    var redirectTo = 'home';
 
-  var redirectTo = 'home';
+    function logoutUser() {
+      Meteor.logout(function() {
+        app.action('redirect', redirectTo);
+      });
+    }
 
-  function logoutUser() {
-    console.log('calling logoutUser');
-    Meteor.logout(function() {
-      app.action('redirect', redirectTo);
-    });
+    return {
+      data: {
+        redirectUrl: app.url(redirectTo)
+      },
+      onRender: logoutUser
+    }
   }
-
-  return {
-    data: {
-      redirectUrl: app.url(redirectTo)
-    },
-    onPageRender: logoutUser
-  }
-})());
+});

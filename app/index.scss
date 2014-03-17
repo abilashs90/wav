@@ -7,6 +7,12 @@ html, body, .page {
   width: 100%;
   height: 100%;
   overflow: auto;
+  background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+  color: #1f1f1f;
 }
 
 .page {
@@ -19,4 +25,16 @@ html, body, .page {
 
 .p {
   padding: 8px;
+}
+
+.block {
+  display: block;
+}
+
+
+.card {
+  @extend .m;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.35);
+  border-radius: 3px;
+  background-color: #fff;
 }

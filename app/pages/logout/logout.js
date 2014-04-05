@@ -1,6 +1,6 @@
 app.defineComponent({
-  name: 'logout', 
-  api: function() {
+  name: 'logout',
+  api: (function() {
     var redirectTo = 'home';
 
     function logoutUser() {
@@ -15,5 +15,5 @@ app.defineComponent({
       },
       onRender: logoutUser
     }
-  }
+  })()
 });

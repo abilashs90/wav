@@ -1,0 +1,37 @@
+<template name="login">
+  <div class="p-login">
+<<<<<<< HEAD
+    <table class="p-login-login-container full-height">
+=======
+    <table class="p-login-container full-height">
+>>>>>>> add-album
+      <tr>
+        <td class="talign-center valign-center">
+          {{#if currentUser}}
+            Welcome {{jsonString currentUser}}
+          {{else}}
+<<<<<<< HEAD
+            <div class="p-login-login">
+=======
+            <div class="p-login">
+>>>>>>> add-album
+              <p class="page-heading tsize-large">Login</p>
+              <form class="pure-form">
+                <fieldset class="pure-group">
+                  <a class="pure-button pure-input-1 p-login-button-facebook">
+                    <i class="icon-facebook"></i>
+                    Login with Facebook
+                  </a>
+                </fieldset>
+              </form>
+            </div>
+          {{/if}}
+        </td>
+      </tr>
+    </table>
+  </div>
+<<<<<<< HEAD
+</template>
+=======
+</template>
+>>>>>>> add-album

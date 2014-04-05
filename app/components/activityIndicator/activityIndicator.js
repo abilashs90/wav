@@ -1,6 +1,6 @@
 app.defineComponent({
-  name: 'activityIndicator', 
-  api: function() {
+  name: 'activityIndicator',
+  api: (function() {
     var activities = [],
         showIndicator = new Reactive();
 
@@ -43,5 +43,5 @@ app.defineComponent({
         }
       }
     }
-  }
+  })()
 });

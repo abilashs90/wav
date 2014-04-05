@@ -4,7 +4,7 @@
     margin: auto;
   }
 
-  .p-login-button-facebook {
+  .p-login-facebook {
     background-color: #3B5999;
     color: #fff;
   }

@@ -1,6 +1,6 @@
 app.defineComponent({
   name: 'albums',
-  api: function() {
+  api: (function() {
 
     return {
       data: {
@@ -18,5 +18,5 @@ app.defineComponent({
         }
       }
     }
-  }
+  })()
 });

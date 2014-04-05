@@ -1,0 +1,47 @@
+<template name="songs">
+  <div class="p p-songs">
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <span class="pure-menu-heading">Songs</span>
+      <ul>
+        <li>
+          {{#if isUploading}}
+            <a href="#" class="p-songs-upload-uploading">
+              <i class="icon-close"></i>
+              Uploading...
+              {{#isolate}}
+                ({{percentUploaded}}%)
+              {{/isolate}}
+            </a>
+          {{else}}
+            <a href="#" class="p-songs-upload-option">
+              <i class="icon-cloud-upload"></i>
+              Upload
+            </a>
+          {{/if}}
+        </li>
+      </ul>
+    </div>
+
+    <input type="file" class="p-songs-upload-input" />
+
+    <ul class="list-reset">
+      {{#each songs}}
+        <li>
+          <div class="p-songs-song card">
+            <table class="p-songs-song-table full-width">
+              <tr>
+                <td class="p-songs-song-image-td">
+                  <img class="p-songs-song-image" src="{{image}}" />
+                </td>
+                <td class="p-songs-song-data">
+                  <span class="tsize-large block">{{title}}</span>
+                  <span class="tsize-small block">{{album}} | {{artist}}</span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</template>

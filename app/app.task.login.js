@@ -17,4 +17,8 @@
 
     });
   });
+
+  app.tasks.add('user', function() {
+    return Meteor.user();
+  });
 })();

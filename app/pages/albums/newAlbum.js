@@ -1,6 +1,6 @@
 app.defineComponent({
-  name: 'newAlbum', 
-  api: function() {
+  name: 'newAlbum',
+  api: (function() {
 
     return {
       events: {
@@ -26,5 +26,5 @@ app.defineComponent({
         }
       }
     };
-  }
+  })()
 });

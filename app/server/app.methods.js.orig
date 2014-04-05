@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 (function() {
   'use strict';
 
@@ -34,18 +35,17 @@
 
     var url = acsUrl(config.endpoint, cloudSessionId);
 
-
-    // try {
+    try {
       var response = HTTP.call(config.method, url, {params: config.params});
       if(response.data.meta && response.data.meta.session_id) {
         cloudSessionId = response.data.meta.session_id;
       }
-
-      return response.data.response?response.data.response.wav:null;
-    // }
-    // catch (ex) {
-    //   throw new Meteor.Error(500, 'cloud_shit', ex.stack);
-    // }
+      
+      return response.data.response.wav;
+    }
+    catch (ex) {
+      return new Meteor.Error(500, 'cloud_shit', ex.stack);
+    }
   }
 
   function loginCloudWithFacebook() {
@@ -53,6 +53,20 @@
 
     if(!user) throw new Meteor.Error(403, 'authenticate_user');
     if(!user.services) throw new Meteor.Error(403, 'authenticate_user_service');
+=======
+function acsUrl(endpoint) {
+  var base = 'https://api.cloud.appcelerator.com/v1/',
+      appKey = 'zDzk2GfKPRNYu8mMB4NqccyRl1w0MAEn';
+
+  return base+endpoint+'.json?key='+appKey;
+}
+
+Meteor.methods({
+  loginOnAcsWithFacebook: function() {
+    var user = Meteor.user();
+
+    if(!user.services) throw 'Cannot Find Services data';
+>>>>>>> Stashed changes
 
     var type = 'facebook',
         serviceData = user.services[type],
@@ -68,12 +82,19 @@
       params: params
     });
 
+<<<<<<< Updated upstream
     return res;
   }
 
-  var cloud = (function() {
+  Meteor.methods({
+    loginCloudWithFacebook: loginCloudWithFacebook,
 
-    function createObject(data) {
+    addAlbum: function(data) {
+
+      this.unblock();
+
+      data.type = 'album';
+
       return callAcs({
         endpoint: 'objects/wav/create',
         method: 'POST',
@@ -82,9 +103,13 @@
           fields: JSON.stringify(data)
         }
       });
-    }
+    },
 
-    function getObjects(where) {
+    getAlbums: function() {
+      this.unblock();
+
+      var where = {type: 'album'};
+      
       return callAcs({
         endpoint: 'objects/wav/query',
         method: 'GET',
@@ -93,67 +118,18 @@
         }
       });
     }
-
-    function removeObject(id) {
-      return callAcs({
-        endpoint: 'objects/wav/delete',
-        method: 'DELETE',
-        useSession: true,
-        params: {
-          id: id
-        }
-      });
-    }
-
-    return {
-      createObject: createObject,
-      getObjects: getObjects,
-      removeObject: removeObject
-    }
-  })();
-
-  Meteor.methods({
-    loginCloudWithFacebook: loginCloudWithFacebook,
-
-    addAlbum: function(data) {
-      this.unblock();
-
-      data.type = 'album';
-      return cloud.createObject(data);
-    },
-
-    getAlbums: function() {
-      this.unblock();
-
-      var where = {type: 'album'};
-
-      return cloud.getObjects(where);
-    },
-
-    removeAlbum: function(albumId) {
-      this.unblock();
-
-      return cloud.removeObject(albumId);
-    },
-
-    addSong: function(data) {
-      this.unblock();
-
-      data.type = 'song';
-      return cloud.createObject(data);
-    },
-
-    getSongs: function() {
-      this.unblock();
-
-      var where = {type: 'song'};
-      return cloud.getObjects(where);
-    },
-
-    removeSong: function(songId) {
-      this.unblock();
-
-      return cloud.removeObject(songId);
-    }
   });
 })();
+=======
+    return HTTP.call(
+      'POST',
+      acsUrl('users/external_account_login'),
+      {params: params }
+    );
+  },
+
+  crateAlbum: function(data) {
+
+  }
+});
+>>>>>>> Stashed changes

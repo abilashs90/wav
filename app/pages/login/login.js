@@ -1,6 +1,6 @@
 app.defineComponent({
-  name: 'login', 
-  api: function() {
+  name: 'login',
+  api: (function() {
 
     function loginWithFacebook() {
       app.ask('login', 'facebook', {
@@ -26,5 +26,5 @@ app.defineComponent({
         }
       }
     }
-  }
+  })()
 });

@@ -1,7 +1,8 @@
 app.defineComponent({
   name: 'player',
   api: (function() {
-    var nativePlayer,
+    var template,
+        nativePlayerSel = '.c-player-native',
         playerData = {
           currSong: new Reactive(),
           status: new Reactive(),
@@ -14,30 +15,30 @@ app.defineComponent({
     }
 
     function play() {
-      nativePlayer.play();
+      template.find(nativePlayerSel).play();
     }
 
     function pause() {
-      nativePlayer.pause();
+      template.find(nativePlayerSel).pause();
     }
 
     var handleProgress = _.throttle(function() {
-      var currTime = nativePlayer.currentTime,
-          duration = nativePlayer.duration,
+      var currTime = template.find(nativePlayerSel).currentTime,
+          duration = template.find(nativePlayerSel).duration,
           progress = parseInt((currTime/duration)*100);
 
       playerData.progress.write(progress);
     }, 1000);
 
     var handleBuffer = _.throttle(function() {
-      var buffered = nativePlayer.buffered;
+      var buffered = template.find(nativePlayerSel).buffered;
 
       if(!buffered.length) return;
 
       var start = buffered.start(0),
           end = buffered.end(0),
           buffDuration = end - start,
-          duration = nativePlayer.duration;
+          duration = template.find(nativePlayerSel).duration;
 
       playerData.buffer.write(parseInt((buffDuration/duration)*100));
     }, 1000);
@@ -92,7 +93,7 @@ app.defineComponent({
       },
 
       onRender: function() {
-        nativePlayer = this.find('.c-player-native');
+        template = this;
       },
 
       events: {

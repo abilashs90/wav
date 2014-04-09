@@ -4,7 +4,7 @@
       <tr>
         <td class="talign-center valign-center">
           {{#if currentUser}}
-            Welcome {{jsonString currentUser}}
+            Welcome {{currentUser.profile.name}}
           {{else}}
             <div class="p-login">
               <p class="page-heading tsize-large">Login</p>

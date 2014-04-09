@@ -12,7 +12,11 @@
     return {
       remote: {
         fetch: function(fetched) {
+          app.component('globalActivity')
+          .ask('start', 'syncAlbums', 'Syncing Albums...');
+
           server('getAlbums', function(error, data) {
+            app.component('globalActivity').ask('stop', 'syncAlbums');
             fetched(data);
           });
         },
@@ -37,7 +41,11 @@
     return {
       remote: {
         fetch: function(fetched) {
+          app.component('globalActivity')
+          .ask('start', 'syncSongs', 'Syncing songs...');
+
           server('getSongs', function(error, data) {
+            app.component('globalActivity').ask('stop', 'syncSongs');
             fetched(data);
           });
         },

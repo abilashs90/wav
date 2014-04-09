@@ -16,7 +16,6 @@ app.defineComponent({
 
         songs: function() {
           var songs = app.collection('songs').read();
-          console.log(songs);
           return songs;
         }
       },
@@ -77,7 +76,8 @@ app.defineComponent({
               album: tags.album,
               artist: tags.artist,
               image: image,
-              url: response.url
+              url: response.url,
+              id3: tags
             };
 
             app.collection('songs').add(obj);
@@ -116,6 +116,10 @@ app.defineComponent({
             dataReader: FileAPIReader(file)
           });
 
+        },
+
+        'click .p-songs-song': function() {
+          app.component('player').ask('playSong', this);
         }
       }
     }

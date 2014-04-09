@@ -31,7 +31,7 @@
 var dirListing = (function() {
   var baseBrowseUrl = 'http://gdrive.goje87.com/browse/',
       ds = new ReactiveDs;
-  
+
   function updateDirectoryListing() {
     Session.set('loading', true);
 
@@ -90,7 +90,7 @@ var playlist = (function() {
 
     queue.push(item);
 
-    Session.set('globalMessage', 
+    Session.set('globalMessage',
       'Added \''+item.filename+'\' to Now Playing...');
 
     Session.set('playlistQueue', queue);

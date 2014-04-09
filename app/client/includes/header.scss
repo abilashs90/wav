@@ -1,0 +1,17 @@
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  vertical-align: middle;
+  z-index: 1000;
+
+  -webkit-transform: translatez(0); /* Chrome, Safari, Opera */
+  -webkit-transform-style: preserve-3d; /* Chrome, Safari, Opera */
+  transform: translatez(0);
+  transform-style: preserve-3d;
+
+  .main-header-logo {
+    width: 150px;
+  }
+}

@@ -9,6 +9,11 @@
     visibility: hidden;
   }
 
+  .p-songs-song {
+    overflow: hidden;
+    height: 64px;
+  }
+
   .p-songs-song-image {
     max-width: 64px;
     max-height: 64px;
@@ -16,6 +21,7 @@
 
   .p-songs-song-image-td {
     width: 64px;
+    height: 64px;
     padding: 0;
     margin: 0;
   }

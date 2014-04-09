@@ -18,7 +18,8 @@ $text-size-small: 0.75rem;
   text-align: center;
 }
 
-.valign-center {
+.valign-center,
+.valign-middle {
   vertical-align: middle;
 }
 
@@ -38,4 +39,9 @@ $text-size-small: 0.75rem;
 
 .block {
   display: block;
+}
+
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
 }

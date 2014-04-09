@@ -1,0 +1,60 @@
+<template name="player">
+  <div class="c-player">
+    {{#if path}}
+      {{#isolate}}
+          <audio class="c-player-native" src="{{path}}" autoplay="" controls="">
+            Your browser does not support player.
+          </audio>
+      {{/isolate}}
+
+      {{#isolate}}
+        <div class="c-player-bar">
+          <div class="c-player-bar-progress" style="width: {{progress}}%;"></div>
+          <div class="c-player-bar-buffer" style="width: {{buffer}}%;"></div>
+        </div>
+      {{/isolate}}
+
+
+      <table class="c-player-song full-width">
+        <tr>
+          <td class="c-player-image-td">
+            <img src="{{image}}" class="c-player-image">
+          </td>
+          <td class="c-player-details-td">
+            <span class="c-player-details-title block">{{title}}</span>
+            <span class="c-player-details-subtitle tsize-small block">
+               {{album}} <b>·</b> {{artist}}
+            </span>
+          </td>
+          {{#isolate}}
+          <td class="c-player-controls-td tsize-large">
+            {{#if statusIs 'loading'}}
+              <a class="c-player-control">
+                <i class="icon-spinner"></i>
+              </a>
+            {{/if}}
+
+            {{#if statusIs 'playing'}}
+              <a class="c-player-control-pause" href="javascript:;">
+                <i class="icon-pause"></i>
+              </a>
+            {{/if}}
+
+            {{#if statusIs 'paused'}}
+              <a class="c-player-control-play" href="javascript:;">
+                <i class="icon-play"></i>
+              </a>
+            {{/if}}
+            <!--i class="icon-last"></i -->
+          </td>
+          {{/isolate}}
+        </tr>
+      </table>
+    {{else}}
+      <div class="c-player-nosong">
+        <i class="icon-sad"></i>
+        No song selected yet...
+      </div>
+    {{/if}}
+  </div>
+</template>

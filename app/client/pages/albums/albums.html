@@ -12,9 +12,6 @@
     </div>
 
     <ul class="p-albums-list">
-      {{#if listMessage}}
-        <div class="p-albums-list-message">{{listMessage}}</div>
-      {{/if}}
       {{#each albums}}
         <li>
           <a class="p-albums-album card block" href="{{pathFor 'album'}}">

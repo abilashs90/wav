@@ -77,8 +77,10 @@ app.defineComponent({
               artist: tags.artist,
               image: image,
               url: response.url,
-              id3: tags
+              id3: tags,
+              filename: file.name
             };
+
 
             app.collection('songs').add(obj);
           });

@@ -60,7 +60,9 @@ app.defineComponent({
     return {
       data: {
         title: function() {
-          return playerData.currSong.read().title;
+          var song = playerData.currSong.read();
+
+          return song.title?song.title:song.filename;
         },
 
         path: function() {
@@ -68,7 +70,8 @@ app.defineComponent({
         },
 
         image: function() {
-          return playerData.currSong.read().image;
+          var image = playerData.currSong.read().image;
+          return image?image:'http://lorempixel.com/g/64/64/nightlife/Music/';
         },
 
         album: function() {

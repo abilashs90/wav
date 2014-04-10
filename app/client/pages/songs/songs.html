@@ -31,11 +31,19 @@
             <table class="p-songs-song-table full-width">
               <tr>
                 <td class="p-songs-song-image-td">
-                  <img class="p-songs-song-image" src="{{image}}" />
+                  {{#if image}}
+                    <img class="p-songs-song-image" src="{{image}}" />
+                  {{else}}
+                    <img class="p-songs-song-image" src="http://lorempixel.com/g/64/64/nightlife/Music/" />
+                  {{/if}}
                 </td>
                 <td class="p-songs-song-data">
-                  <span class="tsize-large block">{{title}}</span>
-                  <span class="tsize-small block">{{album}} <b>&middot;</b> {{artist}}</span>
+                  {{#if title}}
+                    <span class="tsize-large block">{{title}}</span>
+                    <span class="tsize-small block">{{album}} <b>&middot;</b> {{artist}}</span>
+                  {{else}}
+                    <span class="tsize-large block">{{filename}}</span>
+                  {{/if}}
                 </td>
               </tr>
             </table>

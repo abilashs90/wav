@@ -13,10 +13,12 @@
       <table class="c-player-song full-width">
         <tr>
           <td class="c-player-image-td">
-            <img src="{{image}}" class="c-player-image">
+            <div class="c-player-image-wrapper">
+              <img src="{{image}}" class="c-player-image" />
+            </div>
           </td>
           <td class="c-player-details-td">
-            <span class="c-player-details-title block">{{title}}</span>
+            <span class="c-player-details-title block ellipsis">{{title}}</span>
             <span class="c-player-details-subtitle tsize-small block">
                {{album}} <b>·</b> {{artist}}
             </span>

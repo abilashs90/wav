@@ -4,7 +4,7 @@
   // TODO: 'Meteor' should not be used directly here. Try to get rid of all the
   //       instances of 'Meteor' in this file.
 
-  var cloudSessionId;
+  var cloudSessionId, cloudUserId;
 
   function acsUrl(endpoint, session) {
     var base = 'https://api.cloud.appcelerator.com/v1/',
@@ -16,7 +16,8 @@
   function callAcs(config) {
     config = _.extend({
       useSession: false,
-      method: 'GET'
+      method: 'GET',
+      returnFullResponse: false
     }, config);
 
     // If the call requires session and no cloud session is found,
@@ -36,12 +37,20 @@
 
 
     // try {
-      var response = HTTP.call(config.method, url, {params: config.params});
-      if(response.data.meta && response.data.meta.session_id) {
-        cloudSessionId = response.data.meta.session_id;
-      }
+    var response = HTTP.call(config.method, url, {params: config.params});
 
+    if(response.data.meta && response.data.meta.session_id) {
+      cloudSessionId = response.data.meta.session_id;
+    }
+
+
+    if(config.returnFullResponse) {
+      return response.data.response;
+    }
+    else {
       return response.data.response?response.data.response.wav:null;
+    }
+
     // }
     // catch (ex) {
     //   throw new Meteor.Error(500, 'cloud_shit', ex.stack);
@@ -65,8 +74,11 @@
     var res = callAcs({
       endpoint: 'users/external_account_login',
       method: 'POST',
-      params: params
+      params: params,
+      returnFullResponse: true
     });
+
+    cloudUserId = res.users[0].id;
 
     return res;
   }
@@ -146,7 +158,12 @@
     getSongs: function() {
       this.unblock();
 
-      var where = {type: 'song'};
+      // TODO: App should attempt to login when it first renders
+      if(!cloudUserId) {
+        loginCloudWithFacebook();
+      }
+
+      var where = {type: 'song', user_id: cloudUserId};
       return cloud.getObjects(where);
     },
 

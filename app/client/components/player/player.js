@@ -14,6 +14,11 @@ app.defineComponent({
       playerData.currSong.write(song);
     }
 
+    function playSomeSong() {
+      var song = app.component('songs').ask('getRandomSong');
+      playSong(song);
+    }
+
     function play() {
       template.find(nativePlayerSel).play();
     }
@@ -118,6 +123,7 @@ app.defineComponent({
 
         'ended .c-player-native': function() {
           playerData.status.write('ended');
+          playSomeSong();
         },
 
         'loadeddata .c-player-native': function(event) {

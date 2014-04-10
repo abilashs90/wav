@@ -123,6 +123,16 @@ app.defineComponent({
         'click .p-songs-song': function() {
           app.component('player').ask('playSong', this);
         }
+      },
+
+      getRandomSong: function() {
+        var songs = app.collection('songs').read(),
+            randomIndex = parseInt(Math.random()*songs.length),
+            randomSong = songs[randomIndex];
+
+
+
+        return randomSong;
       }
     }
   })()

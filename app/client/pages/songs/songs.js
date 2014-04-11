@@ -127,10 +127,8 @@ app.defineComponent({
 
       getRandomSong: function() {
         var songs = app.collection('songs').read(),
-            randomIndex = parseInt(Math.random()*songs.length),
+            randomIndex = parseInt(Math.random()*(songs.length-1)),
             randomSong = songs[randomIndex];
-
-
 
         return randomSong;
       }

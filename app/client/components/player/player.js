@@ -127,6 +127,7 @@ app.defineComponent({
         },
 
         'loadeddata .c-player-native': function(event) {
+          playerData.status.write('loaded');
           play();
         },
 

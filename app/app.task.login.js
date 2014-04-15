@@ -6,11 +6,17 @@
       try {
         if(error) throw error;
 
-        app.action('callServerMethod', 'loginCloudWithFacebook', function(error) {
+        app.component('globalActivity')
+        .ask('start', 'connectCloud', 'Connecting to your cloud...');
+
+        app.ask('callServer', 'loginCloudWithFacebook', function(error) {
+          app.component('globalActivity').ask('stop', 'connectCloud');
+
           callback.call(this, error);
         });
       }
       catch(ex) {
+        app.component('globalActivity').ask('stop', 'connectCloud');
         callback.call(this, ex);
       }
 

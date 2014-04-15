@@ -3,8 +3,8 @@
 
   function server() {
     var args = _.toArray(arguments);
-    args.unshift('callServerMethod');
-    return app.action.apply(this, args);
+    args.unshift('callServer');
+    return app.ask.apply(this, args);
   }
 
   app.defineCollection('albums', (function() {

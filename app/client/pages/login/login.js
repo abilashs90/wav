@@ -10,7 +10,7 @@ app.defineComponent({
         if(error) throw error;
 
         // on successful login, go to homepage.
-        app.action('redirect', 'home');
+        app.action('redirect', 'songs');
       });
     }
 

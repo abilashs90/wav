@@ -108,7 +108,8 @@
         method: 'POST',
         useSession: true,
         params: {
-          fields: JSON.stringify(data)
+          fields: JSON.stringify(data),
+          acl_name: 'private'
         }
       });
     }
@@ -154,7 +155,7 @@
 
       var where = {type: 'album'};
 
-      return cloud.getObjects(where);
+      return cloud.getObjects({where: JSON.stringify(where)});
     },
 
     removeAlbum: function(albumId) {

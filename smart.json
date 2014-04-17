@@ -5,6 +5,7 @@
     },
     "scss": {},
     "iron-router": {},
-    "klass": {}
+    "klass": {},
+    "q": {}
   }
 }

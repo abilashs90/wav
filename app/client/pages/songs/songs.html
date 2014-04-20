@@ -4,25 +4,25 @@
       <span class="pure-menu-heading">Songs</span>
       <ul>
         <li>
-          {{#if isUploading}}
-            <a href="#" class="p-songs-upload-uploading">
-              <i class="icon-close"></i>
-              Uploading...
-              {{#isolate}}
-                ({{percentUploaded}}%)
-              {{/isolate}}
-            </a>
-          {{else}}
-            <a href="#" class="p-songs-upload-option">
-              <i class="icon-cloud-upload"></i>
-              Upload
-            </a>
-          {{/if}}
+          <a href="#" class="p-songs-upload-option">
+            <i class="icon-cloud-upload"></i>
+            Upload
+          </a>
         </li>
       </ul>
     </div>
 
-    <input type="file" class="p-songs-upload-input" />
+    <input type="file" class="p-songs-upload-input" multiple />
+
+    {{#if uploads}}
+      <ul class="p-songs-uploads list-reset card">
+        {{#each uploads}}
+          <li class="p-songs-upload">
+            {{> uploadProgress}}
+          </li>
+        {{/each}}
+      </ul>
+    {{/if}}
 
     <ul class="list-reset">
       {{#each songs}}
@@ -34,7 +34,7 @@
                   {{#if image}}
                     <img class="p-songs-song-image" src="{{image}}" />
                   {{else}}
-                    <img class="p-songs-song-image" src="http://lorempixel.com/g/64/64/nightlife/Music/" />
+                    <img class="p-songs-song-image" src="http://lorempixel.com/64/64/nightlife/Music/" />
                   {{/if}}
                 </td>
                 <td class="p-songs-song-data">

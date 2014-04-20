@@ -1,0 +1,36 @@
+.c-uploadProgress {
+  position: relative;
+
+  .c-uploadProgress-bar-wrapper {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    margin-top: 3px;
+    background-color: rgba(66, 184, 221, 0.15);
+  }
+  .c-uploadProgress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgb(66, 184, 221);
+  }
+
+  .c-uploadProgress-details {
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .c-uploadProgress-title {
+
+  }
+
+  .c-uploadProgress-cancel-td {
+    width: 32px;
+    text-align: center;
+  }
+
+  .c-uploadProgress-cancel {
+    padding: 8px;
+  }
+}

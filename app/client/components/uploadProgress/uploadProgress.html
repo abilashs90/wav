@@ -1,0 +1,25 @@
+<template name="uploadProgress">
+  <div class="c-uploadProgress p">
+    <table class="c-uploadProgress-details">
+      <tr>
+        <td class="ellipsis">
+          <span class="c-uploadProgress-title">
+            {{title}}
+          </span>
+        </td>
+        <td class="c-uploadProgress-cancel-td">
+          <a href="javascript:;" class="c-uploadProgress-cancel tsize-small">
+            <i class="icon-close"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="c-uploadProgress-bar-wrapper">
+            <div class="c-uploadProgress-bar" style="width: {{progress}}%"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</template>

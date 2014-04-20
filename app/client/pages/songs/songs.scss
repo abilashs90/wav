@@ -24,10 +24,19 @@
     height: 64px;
     padding: 0;
     margin: 0;
+    vertical-align: top;
   }
 
   .p-songs-song-data {
     vertical-align: top;
     padding: 0 8px;
+  }
+
+  .p-songs-uploads {
+    margin-bottom: 21px;
+  }
+
+  .p-songs-upload {
+    border-bottom: 1px solid #ccc;
   }
 }

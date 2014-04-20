@@ -76,7 +76,7 @@ app.defineComponent({
 
         image: function() {
           var image = playerData.currSong.read().image;
-          return image?image:'http://lorempixel.com/g/64/64/nightlife/Music/';
+          return image?image:'http://lorempixel.com/64/64/nightlife/Music/';
         },
 
         album: function() {

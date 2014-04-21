@@ -155,7 +155,7 @@ app.defineComponent({
 
               obj.id = undefined;
               obj.file = undefined;
-              obj.promise = undeinfed;
+              obj.promise = undefined;
 
               obj.url = response.url;
 
@@ -165,6 +165,7 @@ app.defineComponent({
             })
             .fail(function(error) {
               alert(error);
+              console.error(error);
               uploads.remove(obj.id);
             });
           });

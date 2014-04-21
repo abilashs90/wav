@@ -32,6 +32,24 @@
     padding: 0 8px;
   }
 
+  .p-songs-song-delete {
+    display: block;
+    position: absolute;
+    right: 2px;
+    bottom: -5px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    vertical-align: middle;
+    color: #ddd;
+  }
+
+  .p-songs-song-delete:hover {
+    color: #888;
+    transition: all 0.3s;
+  }
+
   .p-songs-uploads {
     margin-bottom: 21px;
   }

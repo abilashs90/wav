@@ -5,6 +5,11 @@
         <td class="ellipsis">
           <span class="c-uploadProgress-title">
             {{title}}
+            {{#if error}}
+              <span class="c-uploadProgress-error tsize-small">
+                <i class="icon-sad"></i> Upload Error!
+              </span>
+            {{/if}}
           </span>
         </td>
         <td class="c-uploadProgress-cancel-td">

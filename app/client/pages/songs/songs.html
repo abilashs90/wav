@@ -26,7 +26,7 @@
 
     <ul class="list-reset">
       {{#each songs}}
-        <li>
+        <li class="pos-relative">
           <a href="javascript:;" class="p-songs-song card block">
             <table class="p-songs-song-table full-width">
               <tr>
@@ -47,6 +47,9 @@
                 </td>
               </tr>
             </table>
+          </a>
+          <a href="javascript:;" class="p-songs-song-delete">
+            <i class="icon-remove"></i>
           </a>
         </li>
       {{/each}}

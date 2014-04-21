@@ -44,7 +44,7 @@ app.defineComponent({
       });
 
       req.addEventListener('error', function(event) {
-        uploadInfo.write({status: 'idle'});
+        uploadInfo.write({status: 'idle', uploadError: true});
         d.reject('There was an error while uploading the file');
       });
 
@@ -135,6 +135,9 @@ app.defineComponent({
 
               _.extend(obj, {
                 promise: promise,
+                remove: function() {
+                  uploads.remove(obj);
+                },
                 title: tags.title || file.name,
                 album: tags.album,
                 artist: tags.artist,
@@ -161,18 +164,22 @@ app.defineComponent({
 
               app.collection('songs').add(obj);
 
-              alert(obj.title+' uploaded successfully');
+              // alert(obj.title+' uploaded successfully');
             })
             .fail(function(error) {
-              alert(error);
+              // alert(error);
               console.error(error);
-              uploads.remove(obj.id);
+              // uploads.remove(obj.id);
             });
           });
         },
 
         'click .p-songs-song': function() {
           app.component('player').ask('playSong', this);
+        },
+
+        'click .p-songs-song-delete': function() {
+          app.collection('songs').remove(this.id);
         }
       },
 

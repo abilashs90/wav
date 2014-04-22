@@ -5,14 +5,14 @@ app.defineComponent({
 
     this.data = {
       progress: function() {
-        if(!this.promise.uploadInfo) return;
+        if(!this.promise || !this.promise.uploadInfo) return;
 
         return this.promise.uploadInfo.read().percent;
       },
 
       error: function() {
-        if(!this.promise.uploadInfo) return;
-        
+        if(!this.promise || !this.promise.uploadInfo) return;
+
         return this.promise.uploadInfo.read().uploadError === true;
       }
     };

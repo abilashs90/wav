@@ -55,6 +55,10 @@
   }
 
   .p-songs-upload {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #eee;
+  }
+
+  .p-songs-upload:last-child {
+    border-bottom: none;
   }
 }

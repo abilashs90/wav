@@ -75,7 +75,7 @@ app.defineComponent({
           image = "data:" + img.format + ";base64," + window.btoa(base64String);
         }
 
-        d.resolve(tags, image);
+        d.resolve([tags, image]);
 
       }, {
         tags: ["title","artist","album","picture"],
@@ -129,7 +129,7 @@ app.defineComponent({
             };
 
             getId3(file)
-            .then(function(tags, image) {
+            .spread(function(tags, image) {
               var promise = uploadSong(file),
                   uploadProgress = new Reactive;
 
@@ -159,6 +159,7 @@ app.defineComponent({
               obj.id = undefined;
               obj.file = undefined;
               obj.promise = undefined;
+              obj.remove = undefined;
 
               obj.url = response.url;
 

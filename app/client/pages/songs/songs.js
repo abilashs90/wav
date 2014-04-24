@@ -85,6 +85,10 @@ app.defineComponent({
       return d.promise;
     }
 
+    function refreshSongsList() {
+      app.collection('songs').fetch();
+    }
+
     return {
       data: {
 
@@ -106,6 +110,10 @@ app.defineComponent({
 
           event.initEvent('click', true, true);
           uploadInput.dispatchEvent(event);
+        },
+
+        'click .p-songs-refresh': function() {
+          refreshSongsList();
         },
 
         'click .p-songs-upload-uploading': function(event, tempalte) {
@@ -190,6 +198,10 @@ app.defineComponent({
             randomSong = songs[randomIndex];
 
         return randomSong;
+      },
+
+      onRender: function() {
+        setInterval(refreshSongsList, 2*60*1000);
       }
     }
   })()

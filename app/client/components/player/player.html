@@ -25,7 +25,7 @@
           </td>
           <td class="c-player-controls-td tsize-large">
             {{#if statusIs 'loading'}}
-              <a class="c-player-control">
+              <a class="c-player-control-loading">
                 <i class="icon-spinner"></i>
               </a>
             {{/if}}
@@ -47,7 +47,10 @@
                 <i class="icon-play"></i>
               </a>
             {{/if}}
-            <!--i class="icon-last"></i -->
+
+            <a class="c-player-control-next" href="javascript:;">
+              <i class="icon-last"></i>
+            </a>
           </td>
         </tr>
       </table>

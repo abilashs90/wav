@@ -141,6 +141,10 @@ app.defineComponent({
 
         'click .c-player-control-pause': function() {
           pause();
+        },
+
+        'click .c-player-control-next': function() {
+          playSomeSong();
         }
       },
 

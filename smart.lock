@@ -15,7 +15,7 @@
       "fast-render": {
         "git": "git://github.com/arunoda/meteor-fast-render.git",
         "branch": "master",
-        "commit": "2a7298d72a84b85e989ec2cc9300bbea7c159eb8"
+        "commit": "0eac9a9c65e36ff61b2f4901a9053c154c9ee91a"
       },
       "scss": {
         "git": "https://github.com/fourseven/meteor-scss.git",

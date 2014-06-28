@@ -7,7 +7,7 @@
 
   function acsUrl(endpoint, session) {
     var base = 'https://api.cloud.appcelerator.com/v1/',
-        appKey = 'zDzk2GfKPRNYu8mMB4NqccyRl1w0MAEn';
+        appKey = 'f3f7614e7bda918e71256d3122400001';
 
     return base+endpoint+'.json?key='+appKey+(session?'&_session_id='+session:'');
   }

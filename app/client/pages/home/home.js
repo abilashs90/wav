@@ -25,7 +25,11 @@ app.defineComponent({
                     app.ask('startListning', function (text) {
                         inputStatus.write('is-finished-listening');
                         this.$(".search-text").val(text);
-                        app.action('redirect', "browse", {query: text});
+                        setTimeout(function () {
+                            app.action('redirect', "browse", {query: text});
+                        }, 1000);                        
+                    }, function (text) {
+                        inputText.write(text);
                     });
                 },
                 'click #footer-search-action': function () {

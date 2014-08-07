@@ -7,6 +7,7 @@
 		voice.onresult = function (event) {	
 			if(event.results[0].isFinal) {
 				if(callback) {							
+					voice.stop();
 					callback(event.results[0][0].transcript);			
 				}			
 			} else {
@@ -14,8 +15,7 @@
 				if(interimCallback) {
 					interimCallback(event.results[0][0].transcript);
 				}
-			}			
-			console.log(event);
+			}						
 		};
 		voice.interimResults = true;
 		voice.start();

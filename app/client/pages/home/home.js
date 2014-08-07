@@ -12,9 +12,15 @@ app.defineComponent({
                     });
                 },
                 'click #footer-search-action': function () { 
-                   $('#footer-search-action .main-action').toggleClass("invisible");
-                   $('#main-search-action .main-action').toggle("invisible");
-                }   
+                   $(".search-text").focus();
+                   $("#footer-search-action").addClass("invisible");
+                },
+                'focus .search-text':function(){
+                    $("#footer-search-action").addClass("invisible");
+                },
+                'blur .search-text':function(){
+                    $("#footer-search-action").removeClass("invisible")
+                }    
             }
         };
     })()

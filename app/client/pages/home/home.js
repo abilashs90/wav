@@ -7,7 +7,7 @@ app.defineComponent({
         function searchQuery (q) {
             Meteor.http.call("GET", "http://172.17.88.254/InternalApi/QuickKart/search?q="+q,function(searchResult,error){
                 console.log(searchResult,error);
-            });           
+            });
         }
 
         return {
@@ -32,14 +32,11 @@ app.defineComponent({
                 },
                 'click #footer-search-action': function () {
                   inputType.write('is-text-input');
-                  inputStatus.write('is-not-listening');                  
+                  inputStatus.write('is-not-listening');
                 },
-                'focus .search-text':function(){                    
+                'focus .search-text':function(){
                     inputType.write('is-text-input');
                     inputStatus.write('is-not-listening');
-                },
-                'blur .search-text':function(){
-                    
                 }
             }
         };

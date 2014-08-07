@@ -1,41 +1,47 @@
-.p-home-bigText{
-	text-align: center;
-	padding: 10px;
-	font-size:20px;
-}
-.p-menu{
-	font-size:20px;
-	text-align:right;
-	padding-right:10px;
-}
-.p-logo-cont{
-	height:120px;
-}
-.p-logo{
-	height:100%;
-}
-.p-home-microphone{
-	text-align:center;
-	font-size:70px;
-}
-.p-home-footer{
-	position:fixed;
-	bottom:0;
-	left:0;
-	padding:10px;
-}
-.icon-cont{
-	display: inline-block;
-	border-radius: 50%;
-	border: 1px solid black;
-	width: 100px;
-	height: 100px;
-	padding: 13px;
-	box-shadow: 1px 1px 2px #000;
-}
-.p-key-cont{
-	font-size:15px;
-}
-.lpadding5{
-	padding-left:5px;
+.p-home {
+
+	.p-home-bigText{
+		text-align: center;
+		padding: 10px;
+		font-size:20px;
+	}
+	.p-menu{
+		font-size:20px;
+		text-align:right;
+		padding-right:10px;
+	}
+	.p-logo-cont{
+		height:120px;
+	}
+	.p-logo{
+		height:100%;
+	}
+	.p-home-microphone{
+		text-align:center;
+		font-size:45px;
+		margin-top: 20%;
+	}
+	.p-home-footer{
+		position:fixed;
+		bottom:0;
+		left:0;
+		padding:10px;
+	}
+	.p-home-icon-cont{
+		display: inline-block;
+		border-radius: 50%;
+		border: 1px solid #ddd;
+		width: 80px;
+		height: 80px;
+		line-height: 80px;
+		box-shadow: 0 3px 6px rgba(0,0,0,0.35);
+	}
+	.p-key-cont{
+		font-size:15px;
+	}
+
+	.lpadding5{
+		padding-left:5px;
+	}
+
 }

@@ -7,10 +7,21 @@
 
       </div>
       <div class="p-home-bigText">What do you wanna buy today?</div>
-      <div class="icon-cont"><span class="icon-microphone"></span></div>
+      <div id="main-search-action">
+      	<div class="icon-cont p-input-big-mic visible"><span class="icon-microphone"></span></div>
+      	<div class="p-input-big-keyboard invisible"><input type="text"></div>
+      </div>
     </div>
     <div class="p-home-footer">
-    	<span class="icon-keyboard"></span><span class="lpadding5 p-key-cont">Use keyboard instead</span>
+    	<div id="footer-search-action">
+    		<a class="cursor-pointer p-input-keyboard visible">
+    			<span class="icon-keyboard"></span><span class="lpadding5 p-key-cont">Use keyboard instead</span>
+    		</a>
+    		<a class="cursor-pointer p-input-mic invisible">
+    			<span class="icon-microphone"></span><span class="lpadding5 p-key-cont">Use mic instead</span>
+    		</a>
+    	</div>
     </div>
+
   </div>
 </template>

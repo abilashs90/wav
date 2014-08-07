@@ -6,9 +6,9 @@ app.defineComponent({
             inputText = new Reactive();
 
         function searchQuery (q) {
-            // Meteor.http.call("GET", "http://172.17.88.254/InternalApi/QuickKart/search?q="+q,function(searchResult,error){
-            //     console.log(searchResult,error);
-            // });           
+            Meteor.http.call("GET", "http://api.flipkart.com/InternalApi/QuickKart/search?q="+q,function(searchResult,error){
+                console.log(searchResult,error);
+            });           
         }
 
         return {
@@ -30,11 +30,9 @@ app.defineComponent({
                     inputStatus.write('is-listening');
                     app.ask('startListning', function (text) {
                         inputStatus.write('is-finished-listening');
-                        // this.$(".search-text").val(text);
                         inputText.write(text);
                         searchQuery(text);
                     }, function (text) {
-                        // this.$(".search-text").val(text);
                         inputText.write(text);
                         searchQuery(text);                        
                     });

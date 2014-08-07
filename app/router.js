@@ -7,7 +7,8 @@
   });
 
   app.routes([
-    {name: 'home', path: '/'}
+    {name: 'home', path: '/'},
+    {name: 'product', path: '/product/:id'}
   ]);
 
 })(this);

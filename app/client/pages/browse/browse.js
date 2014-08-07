@@ -2,11 +2,11 @@ app.defineComponent({
     name: 'browse',
     api: (function() {
         
-        var loadStatus = new Reactive(0);
+        var loadStatus = new Reactive(false);
 
         function searchQuery (q) {
             Meteor.http.call("GET", "http://api.flipkart.com/InternalApi/QuickKart/search?q="+q,function(searchResult,error){                
-                loadStatus(1);
+                loadStatus = true;
                 console.log(searchResult,error);
             });           
         }

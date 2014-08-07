@@ -5,7 +5,7 @@ app.defineComponent({
             data: {                
             },
             events: {
-                'click .icon-cont': function() {                    
+                'click .p-home-icon-cont': function() {                    
                     $(".p-input-big-keyboard").removeClass("invisible");
                     app.ask('startListning', function (text) {
                         this.$(".search-text").val(text);

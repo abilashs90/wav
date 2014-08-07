@@ -3,9 +3,10 @@ app.defineComponent({
     api: (function() {
 
         var loadStatus = new Reactive(false);
+        var query = new Reactive();
 
         function searchQuery (q) {
-            Meteor.http.call("GET", "http://api.flipkart.com/InternalApi/QuickKart/search?q="+q,function(searchResult,error){
+            Meteor.http.call("GET", "http://api.flipkart.com/InternalApi/QuickKart/search?q="+q,function(searchResult,error){                
                 loadStatus.write(true);
                 console.log(searchResult,error);
             });
@@ -15,6 +16,9 @@ app.defineComponent({
             data: {
                 loadStatus: function(){
                     return loadStatus.read();
+                },
+                query: function () {
+                    return query.read();
                 }
 
             },
@@ -22,9 +26,9 @@ app.defineComponent({
 
             },
             onRender:function(){
-                var query = app.param('query');
-                searchQuery(query);
-
+                var q = app.param('query');
+                searchQuery(q);
+                query.write(q);
             }
         };
     })()

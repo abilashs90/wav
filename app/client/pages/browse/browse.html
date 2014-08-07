@@ -1,9 +1,12 @@
 <template name="browse">
   <div class="p-browse">
     {{#if loadStatus}}
-    <div>
-      <div></div>
-      <div></div>
+    <div class="p-browse-header">
+      <div class="p-browse-fk-logo"><img src="/images/flipkart-logo-trans-small.png" /></div>
+      <div class="p-browse-seach-query">
+        <span class="query">{{query}}</span>
+        <span class="cancel"><a class="cancel" href="/">x</a></span>
+      </div>
     </div>
     {{else}}
     <div class="g-loader"><i class="icon-spinner"></i> Loading</div>

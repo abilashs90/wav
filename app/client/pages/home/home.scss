@@ -83,7 +83,10 @@
 	}
 
 	.search-bar {
-		display: inline-block;
+		display: inline-block;	
+	}
+	.search-text {
+		color: #ccc;
 	}
 }
 .p-home.is-voice-input.is-finished-listening {

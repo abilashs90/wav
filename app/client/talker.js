@@ -9,7 +9,7 @@
 				callback(text);			
 			}			
 		};
-		voice.interimResults = true;
+		//voice.interimResults = true;
 		voice.start();
 	});
 })();

@@ -53,16 +53,14 @@
 	.search-text {
 		padding: 5px;
 		width: 100%;
+		text-align: center;
 	}
 	.search-bar {
 		width: 85%;
 		display: inline-block;
-		float: left;
 	}
 	.search-button {
-		width: 15%;
 		display: inline-block;
-		float: right;
 	}
 	.p-search-text{
 		max-width: 300px;
@@ -74,6 +72,12 @@
 .p-home.is-voice-input {
 	.search-button, .search-bar {
 		display: none;
+	}
+}
+
+.p-home.is-text-input {
+	.search-bar {
+		border-bottom: 1px solid #ccc;
 	}
 }
 
@@ -92,5 +96,5 @@
 .p-home.is-voice-input.is-finished-listening {
 	.search-bar {
 		display: inline-block;
-	}	
+	}
 }

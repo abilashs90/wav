@@ -1,5 +1,9 @@
 <template name="browse">
-  	<div class="p-browse">
-    {{product}}
+  <div class="p-browse">
+    {{#if loadStatus}}
+    <div>Loaded</div>
+    {{else}}
+    <div>Loading</div>
+    {{/if}}
   </div>
 </template>

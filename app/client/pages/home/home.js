@@ -34,14 +34,11 @@ app.defineComponent({
                 },
                 'click #footer-search-action': function () {
                   inputType.write('is-text-input');
-                  inputStatus.write('is-not-listening');                  
+                  inputStatus.write('is-not-listening');
                 },
-                'focus .search-text':function(){                    
+                'focus .search-text':function(){
                     inputType.write('is-text-input');
                     inputStatus.write('is-not-listening');
-                },
-                'blur .search-text':function(){
-                    
                 }
             }
         };

@@ -12,6 +12,7 @@ app.defineComponent({
                     });
                 },
                 'click #footer-search-action': function () { 
+                   $(".p-input-big-keyboard").removeClass("invisible");       
                    $(".search-text").focus();
                    $("#footer-search-action").addClass("invisible");
                 },

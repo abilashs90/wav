@@ -24,7 +24,11 @@
 	left:0;
 	padding:10px;
 }
+.p-input-big-keyboard{
+	font-size:30px;
+}
 .icon-cont{
+	cursor:pointer;
 	display: inline-block;
 	border-radius: 50%;
 	border: 1px solid black;
@@ -33,6 +37,7 @@
 	padding: 13px;
 	box-shadow: 1px 1px 2px #000;
 }
+
 .p-key-cont{
 	font-size:15px;
 }

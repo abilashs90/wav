@@ -23,8 +23,8 @@ app.defineComponent({
                 'click .p-home-icon-cont': function() {
                     inputType.write('is-voice-input');
                     inputStatus.write('is-listening');
-                    // $(".p-input-big-keyboard").removeClass("invisible");
                     app.ask('startListning', function (text) {
+                        inputStatus.write('is-finished-listening');
                         this.$(".search-text").val(text);
                         searchQuery(text);
 
@@ -32,20 +32,14 @@ app.defineComponent({
                 },
                 'click #footer-search-action': function () {
                   inputType.write('is-text-input');
-                  inputStatus.write('is-not-listening');
-                  //  $(".p-input-big-keyboard").removeClass("invisible");
-                  //  $(".search-text").focus();
-                  //  $("#footer-search-action").addClass("invisible");
+                  inputStatus.write('is-not-listening');                  
                 },
-                'focus .search-text':function(){
-                    // $("#footer-search-action").addClass("invisible");
+                'focus .search-text':function(){                    
                     inputType.write('is-text-input');
                     inputStatus.write('is-not-listening');
                 },
                 'blur .search-text':function(){
-                    // $("#footer-search-action").removeClass("invisible")
-                    // inputType.write('is-voice-input');
-                    // inputStatus.write('is-not-listening');
+                    
                 }
             }
         };

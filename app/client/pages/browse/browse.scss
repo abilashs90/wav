@@ -11,3 +11,25 @@
 	width: 100px;
 	padding: 5px;
 }
+.p-browse-fk-logo {
+	display: inline-block;
+	float: left;
+	margin-right: 20px;
+}
+.p-browse-seach-query {
+	display: inline-block;	
+	margin-top: 20px;
+	padding-left: 5px;
+	padding-right: 10px;
+	border: 1px solid #000;
+	border-radius: 3px;
+
+	.query {
+		padding-right: 20px;
+		float: left;
+	}
+	.cancel {
+		color: #c00;
+		float: right
+	}
+}

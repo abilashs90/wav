@@ -1,0 +1,14 @@
+.p-product-rating-cont{
+	position: relative;
+    width: 100px;
+    height: 20px;
+}
+.p-product-rating-subcont{
+    position: absolute;
+    top: 0;
+    width: 61%;
+    overflow: hidden;
+    background: 0;
+    height: 20px;
+    white-space: nowrap;
+}

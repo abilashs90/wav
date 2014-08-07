@@ -1,15 +1,23 @@
 (function() {
   	'use strict';
 
- 	app.tasks.add('startListning', function(callback) {
+ 	app.tasks.add('startListning', function(callback, interimCallback) {
     	var voice = new webkitSpeechRecognition();
-		voice.onresult = function (event) {					
-			if(callback) {		
-				var text = event.results && event.results[0] && event.results[0][0] && event.results[0][0] && event.results[0][0].transcript;
-				callback(text);			
+    	var interimText = "";
+		voice.onresult = function (event) {	
+			if(event.results[0].isFinal) {
+				if(callback) {							
+					callback(event.results[0][0].transcript);			
+				}			
+			} else {
+				interimText = interimText + event.results[0][0].transcript;
+				if(interimCallback) {
+					interimCallback(event.results[0][0].transcript);
+				}
 			}			
+			console.log(event);
 		};
-		//voice.interimResults = true;
+		voice.interimResults = true;
 		voice.start();
 	});
 })();

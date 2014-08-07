@@ -1,4 +1,31 @@
+.p-home-bigText{
+	text-align: center;
+	padding: 10px;
+	font-size: 40px;
+	color:#fdd922;
+}
 .p-home-microphone{
 	text-align:center;
 	font-size:70px;
+}
+.p-home-footer{
+	position:absolute;
+	bottom:0;
+	left:0;
+	padding:10px;
+}
+.icon-cont{
+	display: inline-block;
+	border-radius: 50%;
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+	padding: 13px;
+	box-shadow: 1px 1px 2px #000;
+}
+.p-key-cont{
+	font-size:15px;
+}
+.lpadding5{
+	padding-left:5px;
 }

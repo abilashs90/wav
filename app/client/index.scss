@@ -62,3 +62,18 @@ a {
   animation: spin 1s infinite linear;
   -webkit-animation: spin 1s infinite linear;
 }
+.cursor-pointer{
+  cursor:pointer;
+}
+.visible{
+  display:inline-block;
+}
+.invisible{
+  display:none;
+}
+.width100{
+  width:100%;
+}
+.overHidden{
+  overflow:hidden;
+}

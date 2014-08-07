@@ -6,8 +6,9 @@ app.defineComponent({
             },
             events: {
                 'click .icon-cont': function() {                    
+                    $(".p-input-big-keyboard").removeClass("invisible");
                     app.ask('startListning', function (text) {
-                        console.log(text);
+                        this.$(".search-text").val(text);
                     });
                 }   
             }

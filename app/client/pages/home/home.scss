@@ -25,7 +25,8 @@
 	padding:10px;
 }
 .p-input-big-keyboard{
-	font-size:30px;
+	font-size: 20px;
+	margin-top: 30px;
 }
 .icon-cont{
 	cursor:pointer;
@@ -43,4 +44,18 @@
 }
 .lpadding5{
 	padding-left:5px;
+}
+.search-text {
+	padding: 5px;
+	width: 100%;
+}
+.search-bar {
+	width: 85%;
+	display: inline-block;
+	float: left;
+}
+.search-button {
+	width: 15%;
+	display: inline-block;
+	float: right;	
 }

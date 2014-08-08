@@ -8,7 +8,8 @@
 	border: 1px solid rgb(226, 226, 226);
 	border-radius: 5px;
 	box-shadow: 1px 1px 0px #818181;
-	cursor:pointer;
+	cursor: pointer;
+	background: #FFF;
 }
 .p-item-pic-cont{	
 	width: 100px;
@@ -18,24 +19,32 @@
 	padding: 10px;
 }
 .item-pic-small{
-	height: 100px;
+	height: 115px;
+	width: 80px;
 	padding: 5px;
 }
 .p-browse-fk-logo {
+	display: inline-block;
 	height: 36px;
 	margin-right: 20px;
+	float: left;
 }
-.p-browse-seach-query {
+.p-browse-search-query-wrapper {
 	display: inline-block;
+	width: 50%;
 	margin-top: 20px;
+	text-align: center;
+}
+.p-browse-search-query {		
 	padding-left: 5px;
 	padding-right: 10px;
 	border: 1px solid #000;
 	border-radius: 3px;
-	max-width: 60%;
+	overflow: hidden;		
 	.query {		
 		padding-right: 20px;
 		float: left;
+		overflow: hidden;
 	}
 	.cancel {
 		color: #c00;		
@@ -46,4 +55,35 @@
 	float: right;
 	margin-top: 22px;
 	margin-right: 20px;
+}
+.p-browse-header {
+	margin-bottom: 20px;
+}
+.p-browse-item-data {
+	.title {
+		font-size: 16px;
+		width: 150px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		margin-bottom: 5px;
+		font-weight: bold;
+	}
+	.sub-title {
+		font-size: 14px;
+		margin-bottom: 5px;
+		width: 150px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		margin-bottom: 5px;
+	}
+	.price {	
+		font-size: 16px;		
+		width: 150px;
+		.selling-price {
+			color: #c00;
+			font-weight: bold;
+		}		
+	}
 }

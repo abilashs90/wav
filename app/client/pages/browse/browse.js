@@ -34,7 +34,7 @@ app.defineComponent({
                     itemId = event.currentTarget.id;
                     console.log(event);
                     setTimeout(function () {
-                            app.action('redirect', "product", {id: itemId});
+                        app.action('redirect', "product", {id: itemId});
                     }, 1000);
                 }
             },

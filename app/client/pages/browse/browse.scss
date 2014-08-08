@@ -86,6 +86,26 @@
 		}
 	}
 
+	.rating-cont{
+		position: relative;
+    	width: 96px;
+    	height: 20px;
+	}
+	.rating-subcont{
+    	position: absolute;
+    	top: 0;
+    	overflow: hidden;
+    	background: 0;
+    	height: 20px;
+    	white-space: nowrap;
+	}
+	.icon-star{
+		color:#e9ce18;
+	}
+	.icon-star2{
+		color:#e9ce18;
+	}
+
 	.discount {
 		font-size: 13px;
 		color: #ccc;

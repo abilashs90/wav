@@ -44,6 +44,9 @@ app.defineComponent({
                 },
                 loadListStatus:function(){
                     return loadListStatus.read();
+                },
+                getWidth:function(rating){
+                    return (rating/5*100);
                 }
             },
             events: {

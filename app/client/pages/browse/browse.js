@@ -5,14 +5,13 @@ app.defineComponent({
         var loadStatus = new Reactive(false);
         var query = new Reactive();
         var browseProducts = new Reactive();
+        var matchedCategories = new Reactive();
 
         function searchQuery (q) {
             Meteor.http.call("GET", "http://api.flipkart.com/InternalApi/QuickKart/search?q="+q,function(error,searchResult){
-                loadStatus.write(true);
-                console.log(searchResult);
-                console.log(searchResult.data.RESPONSE);
+                loadStatus.write(true);                            
                 browseProducts.write(searchResult.data.RESPONSE.data.products);
-                console.log(browseProducts);
+                matchedCategories.write(searchResult.data.RESPONSE.data.categories);                
             });
         }
 
@@ -26,16 +25,14 @@ app.defineComponent({
                 },
                 browseProducts:function(){
                     return browseProducts.read();
+                },
+                matchedCategories: function () {
+                    return matchedCategories.read();
                 }
-
             },
             events: {
                 'click .p-browse-item': function(event) {
-                    itemId = event.currentTarget.id;
-                    console.log(event);
-                    setTimeout(function () {
-                        app.action('redirect', "product", {id: itemId});
-                    }, 1000);
+                    itemId = event.currentTarget.id;                                        
                 }
             },
             onRender:function(){

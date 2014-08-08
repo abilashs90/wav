@@ -1,25 +1,72 @@
 <template name="browse">
-    <div class="overlay hidden">
-        <div class="product-details">
-            <div class="header">
-                <div class="product-image">
-                    <img src="{{productDetails.image125url}}" onerror="this.onerror=null;this.src='{{image125errorUrl}}'" />
-                </div>
-                <div class="product-title">
-                    <div>{{productDetails.title}}</div>
-                    <div>{{productDetails.subtitle}}</div>
-                </div>
+    {{#if productDetails.title}}
+      <div class="overlay">
+          {{#with productDetails}}
+          <div class="overlay-mask"></div>
+          <div class="overlay-body">
+            <a class="overlay-close"><i class="icon-cancel-circle"></i></a>
+            <div class="p-item-pic-cont">
+                <img src={{image125url}} onerror="this.onerror=null;this.src='{{image125errorUrl}}';" class="item-pic-small">
             </div>
-            <div class="buy-price-container">
+            <div class="p-browse-item-data">
+                <div class="title">{{title}}</div>
+                <div class="sub-title">{{subtitle}}</div>
                 <div class="price">
-                    {{productDetails.fsp}}
+                    <span class="selling-price">Rs. {{fsp}}</span>
+                    {{#if discountPercentage}}<span class="discount">({{discountPercentage}} % Off)</span>{{/if}}
                 </div>
-                <div class="buy-button">
-                    <a href="http://api.flipkart.com/m/checkout/co?pid={{productDetails.listId}}" class="buy">Buy</a>
+                <div class="rating-cont">
+                    <span class="icon-star"></span>
+                    <span class="icon-star"></span>
+                    <span class="icon-star"></span>
+                    <span class="icon-star"></span>
+                    <span class="icon-star"></span>
+                    <div class="rating-subcont" style="width:{{getWidth rating}}%">
+                        <span class="icon-star2"></span>
+                        <span class="icon-star2"></span>
+                        <span class="icon-star2"></span>
+                        <span class="icon-star2"></span>
+                        <span class="icon-star2"></span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+
+            <a href="http://api.flipkart.com/m/checkout/co?pid={{listId}}" class="overlay-buy-button">
+              BUY NOW
+            </a>
+            <div class="overlay-seller-delivery-bubble">
+              <i class="icon-eject"></i>
+              Sold by WS Retail; Delivered in 2-3 working days at 560034. (
+              <a href="#">Change</a>
+              )
+            </div>
+
+            {{#if keyFeatures}}
+              <p class="p">
+                Key Features:
+              </p>
+              <ul>
+                {{#each keyFeatures}}
+                  <li>{{this}}</li>
+                {{/each}}
+                <a class="underline" href="#">More</a>
+              </ul>
+            {{/if}}
+
+            <div class="overlay-reviews p">
+              <i class="icon-comments"></i>
+              <a class="underline" href="#">Know what people say about this</a>
+              &raquo;
+            </div>
+            <div class="overlay-sellers p">
+              <i class="icon-group"></i>
+              <a class="underline" href="#">Get more seller and delivery options</a>
+              &raquo;
+            </div>
+          </div>
+          {{/with}}
+      </div>
+    {{/if}}
     <div class="p-browse">
         <div class="p-browse-header">
             <img class="p-browse-fk-logo" src="/images/flipkart-logo-trans-small.png" />

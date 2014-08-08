@@ -144,10 +144,10 @@
 .product-details {
 	position: absolute;
 	width: 80%;
-	height: 80%;	
+	height: 80%;
 	background: #FFF;
 	z-index: 2;
-	top: 0px;	
+	top: 0px;
 	.header {
 		.product-image {
 			display: inline-block;
@@ -155,13 +155,13 @@
 			float: left;
 		}
 		.product-title {
-			display: inline-block;			
+			display: inline-block;
 		}
 	}
 
 	.buy-price-container {
-	
-	}	
+
+	}
 }
 .overlay {
 	width: 100%;
@@ -171,4 +171,52 @@
 	position: fixed;
 	z-index: 1;
 	overflow-y: scroll;
+
+	.overlay-body {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		bottom: 10px;
+		right: 10px;
+		background-color: #fff;
+		box-shadow: 0 0 10px rgba(0,0,0,0.35);
+		padding-top: 10px;
+	}
+
+	.overlay-close {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+	}
+
+	.overlay-buy-button {
+		background-color: #ff5900;
+		color: #fff;
+		width: 200px;
+		margin: auto;
+		display: block;
+		padding: 5px 10px;
+		text-align: center;
+		box-shadow: 0 0 5px rgba(0,0,0,0.35);
+		margin-top: 10px;
+	}
+
+	.overlay-seller-delivery-bubble {
+		background-color: #888;
+		color: #fff;
+		padding: 10px;
+		margin: 15px;
+		font-size: 14px;
+		position: relative;
+
+		.icon-eject {
+			display: block;
+			position: absolute;
+			top: -11px;
+			left: 50%;
+			font-size: 20px;
+			margin-left: -10px;
+			color: #888;
+		}
+	}
 }

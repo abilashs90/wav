@@ -12,17 +12,17 @@ app.defineComponent({
         function searchUrl(url){
             mainUrl = "http://api.flipkart.com"+url;
             Meteor.http.call("GET",mainUrl ,function(error,searchResult){
-                loadListStatus.write(true);            
-                browseProducts.write(searchResult.data.RESPONSE.data.products);             
+                loadListStatus.write(true);
+                browseProducts.write(searchResult.data.RESPONSE.data.products);
             });
         }
         function searchQuery (q) {
             var url = "http://api.flipkart.com/InternalApi/QuickKart/search?q="+q;
             Meteor.http.call("GET",url ,function(error,searchResult){
-                loadStatus.write(true);  
-                loadListStatus.write(true);                          
+                loadStatus.write(true);
+                loadListStatus.write(true);
                 browseProducts.write(searchResult.data.RESPONSE.data.products);
-                matchedCategories.write(searchResult.data.RESPONSE.data.categories);              
+                matchedCategories.write(searchResult.data.RESPONSE.data.categories);
             });
         }
 
@@ -55,8 +55,8 @@ app.defineComponent({
             },
             events: {
                 'click .p-browse-item': function(event) {
-                    var itemId = event.currentTarget.id;           
-                    $(".overlay").show();                             
+                    var itemId = event.currentTarget.id;
+                    $(".overlay").show();
                     console.log(this);
                     productDetails.write(this);
                 },
@@ -70,6 +70,10 @@ app.defineComponent({
                 },
                 'click .cancel-query':function(event){
                     app.action('redirect','home');
+                },
+
+                'click .overlay-close': function(event) {
+                  productDetails.write(false);
                 }
             },
             onRender:function(){

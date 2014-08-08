@@ -14,6 +14,7 @@
 .p-browse-fk-logo {
 	display: inline-block;
 	float: left;
+	width: 20%;
 	margin-right: 20px;
 }
 .p-browse-seach-query {
@@ -23,13 +24,18 @@
 	padding-right: 10px;
 	border: 1px solid #000;
 	border-radius: 3px;
-
-	.query {
+	max-width: 60%;
+	.query {		
 		padding-right: 20px;
 		float: left;
 	}
 	.cancel {
-		color: #c00;
-		float: right
+		color: #c00;		
 	}
+}
+.p-browse-menu {
+	display: inline-block;
+	float: right;
+	margin-top: 22px;
+	margin-right: 20px;
 }

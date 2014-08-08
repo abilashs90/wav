@@ -4,30 +4,36 @@
 	padding: 0;
 }
 .p-browse-item{
-	margin: 10px;
-	border: 1px solid rgb(226, 226, 226);
-	border-radius: 5px;
-	box-shadow: 1px 1px 0px #818181;
+	margin: 10px 0;
+	min-height: 110px;
+	border-radius: 0;
+	box-shadow: 0 0 5px rgba(0,0,0,0.35);
 	cursor: pointer;
 	background: #FFF;
 }
-.p-item-pic-cont{	
+.p-item-pic-cont{
+	float: left;
 	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	margin: 5px;
 }
 .p-browse-item-data{
 	vertical-align: top;
 	padding: 10px;
 }
 .item-pic-small{
-	height: 115px;
-	width: 80px;
-	padding: 5px;
+	max-width: 100%;
+	max-height: 100%;
+	vertical-align: middle;
 }
 .p-browse-fk-logo {
 	display: inline-block;
 	height: 36px;
-	margin-right: 20px;
+	margin-right: 6px;
 	float: left;
+	vertical-align: middle;
 }
 .p-browse-search-query-wrapper {
 	display: inline-block;
@@ -35,21 +41,19 @@
 	margin-top: 20px;
 	text-align: center;
 }
-.p-browse-search-query {		
-	padding-left: 5px;
-	padding-right: 10px;
-	border: 1px solid #000;
-	border-radius: 3px;
-	overflow: hidden;		
-	.query {		
-		padding-right: 20px;
-		float: left;
-		overflow: hidden;
+.p-browse-query {
+	font-size: 20px;
+}
+
+.p-browse-query-cancel {
+	font-size: 12px;
+	display: inline-block;
+	padding: 3px;
+
+	.icon-cancel-circle {
+		color: #ccc;
 	}
-	.cancel {
-		color: #c00;
-		cursor:pointer;		
-	}
+
 }
 .p-browse-menu {
 	display: inline-block;
@@ -58,54 +62,78 @@
 	margin-right: 20px;
 }
 .p-browse-header {
-	margin-bottom: 20px;
+	line-height: 36px;
 }
 .p-browse-item-data {
+	margin-left: 120px;
 	.title {
-		font-size: 16px;
-		width: 150px;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		overflow: hidden;
-		margin-bottom: 5px;
-		font-weight: bold;
 	}
 	.sub-title {
-		font-size: 14px;
-		margin-bottom: 5px;
-		width: 150px;
+		font-size: 13px;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		overflow: hidden;
-		margin-bottom: 5px;
+		color: #888;
 	}
-	.price {	
-		font-size: 16px;		
-		width: 150px;
+	.price {
+		font-size: 20px;
 		margin-bottom: 5px;
 		.selling-price {
 			color: #c00;
-			font-weight: bold;
-		}		
+		}
+	}
+
+	.rating-cont{
+		position: relative;
+    	width: 96px;
+    	height: 20px;
+	}
+	.rating-subcont{
+    	position: absolute;
+    	top: 0;
+    	overflow: hidden;
+    	background: 0;
+    	height: 20px;
+    	white-space: nowrap;
+	}
+	.icon-star{
+		color:#e9ce18;
+	}
+	.icon-star2{
+		color:#e9ce18;
+	}
+
+	.discount {
+		font-size: 13px;
+		color: #ccc;
 	}
 }
 
-.p-browse-categories {
-	background: #FFF;
+.p-browse-find {
+	font-size: 13px;
+	color: #888;
 	padding: 10px;
+}
+
+.p-browse-categories {
+	padding: 5px;
 	margin-bottom: 10px;
+	width: 100%;
+	overflow-x: scroll;
+	white-space: nowrap;
 
 	.p-browse-category {
-		border: 1px solid #000;
 		display: inline-block;
-		padding: 5px;
 		white-space: nowrap;
-		border-radius: 10px;
 		margin: 3px;
 		background: #EEEBEB;
-		text-shadow: 1px 2px 1px #FFF;
-		cursor:pointer;
+		cursor: pointer;
+		padding: 3px 8px;
 	}
+
 	.p-active-category{
 		background: #333;
 		color: white;

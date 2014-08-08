@@ -1,0 +1,17 @@
+.p-recognize-parent{
+	padding: 0;
+}
+.p-recognize-parent li .title{
+	padding: 5px;
+	background: #C5C5C5;
+}
+.p-recognize-child{
+	padding:0;
+}
+
+.p-recognize-child li.ctitle{
+	padding:5px;
+}
+.rec-list-cont{
+	padding: 5px;
+}

@@ -48,6 +48,9 @@ app.defineComponent({
                 },
                 productDetails: function () {
                     return productDetails.read();
+                },
+                getWidth:function(rating){
+                    return (rating/5*100);
                 }
             },
             events: {

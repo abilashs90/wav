@@ -20,57 +20,60 @@
             </div>
         </div>
     </div>
-    <div class="p-browse">    
+    <div class="p-browse">
         <div class="p-browse-header">
-            <div class="p-browse-fk-logo"><img src="../images/flipkart-logo-trans-small.png" /></div>
-            <div class="p-browse-search-query-wrapper">
-                <div class="p-browse-search-query">
-                    <span class="query">{{query}}</span>
-                    <span class="cancel"><a class="cancel" href="/">x</a></span>
-                </div>
-            </div>
-            <div class="p-browse-menu"><span class="icon-ellipsis-v"></span></div>
+            <img class="p-browse-fk-logo" src="/images/flipkart-logo-trans-small.png" />
+            <span class="p-browse-query">{{query}}</span>
+            <a class="p-browse-query-cancel" href="/"><i class="icon-cancel-circle"></i></a>
         </div>
-        <div>
-            {{#if loadStatus}}
-                <div>
-                    {{#if matchedCategories}}
-                        <div class="p-browse-categories">
-                            {{#each matchedCategories}}
-                                <div class="p-browse-category" data-url="{{url}}">{{title}}</div>
-                            {{/each}}        
-                        </div>
-                    {{/if}}
-                    {{#if loadListStatus}}
-                   
-                    {{#if browseProducts}}
-                        <ul class="p-browse-list">
-                            {{#each browseProducts}}
-                                <li class="p-browse-item" id="{{id}}">
-                                    <div class="i-block p-item-pic-cont">
-                                        <img src={{image125url}} onerror="this.onerror=null;this.src='{{image125errorUrl}}';" class="item-pic-small">
-                                    </div>
-                                    <div class="i-block p-browse-item-data">
-                                        <div class="title">{{title}}</div>
-                                        <div class="sub-title">{{subtitle}}</div>
-                                        <div class="price">
-                                            <span class="selling-price">Rs. {{fsp}}</span>
-                                            {{#if discountPercentage}}<span class="discount">({{discountPercentage}} % Off)</span>{{/if}}
-                                        </div>
-                                        <div>{{availability}}</div>
-                                    </div>
-                                </li>
-                            {{/each}}
-                        </ul> 
-                    {{/if}}
-                    {{else}}
-                    <div class="g-loader"><i class="icon-spinner"></i> Loading</div>
-                    
-                    {{/if}}                     
+        {{#if loadStatus}}
+            {{#if matchedCategories}}
+                <span class="p-browse-find">Find {{query}} in</span>
+                <div class="p-browse-categories">
+                    {{#each matchedCategories}}
+                        <div class="p-browse-category" data-url="{{url}}">{{title}}</div>
+                    {{/each}}
                 </div>
-            {{else}}
+            {{/if}}
+	    {{#if loadListStatus}}
+            {{#if browseProducts}}
+                <ul class="p-browse-list">
+                    {{#each browseProducts}}
+                        <li class="p-browse-item" id="{{id}}">
+                            <div class="p-item-pic-cont">
+                                <img src={{image125url}} onerror="this.onerror=null;this.src='{{image125errorUrl}}';" class="item-pic-small">
+                            </div>
+                            <div class="p-browse-item-data">
+                                <div class="title">{{title}}</div>
+                                <div class="sub-title">{{subtitle}}</div>
+                                <div class="price">
+                                    <span class="selling-price">Rs. {{fsp}}</span>
+                                    {{#if discountPercentage}}<span class="discount">({{discountPercentage}} % Off)</span>{{/if}}
+                                </div>
+                                <div class="rating-cont">
+                                    <span class="icon-star"></span>
+                                    <span class="icon-star"></span>
+                                    <span class="icon-star"></span>
+                                    <span class="icon-star"></span>
+                                    <span class="icon-star"></span>
+                                    <div class="rating-subcont" style="width:{{getWidth rating}}%">
+                                        <span class="icon-star2"></span>
+                                        <span class="icon-star2"></span>
+                                        <span class="icon-star2"></span>
+                                        <span class="icon-star2"></span>
+                                        <span class="icon-star2"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+        {{else}}
                 <div class="g-loader"><i class="icon-spinner"></i> Loading</div>
             {{/if}}
-        </div>      
+        {{else}}
+            <div class="g-loader"><i class="icon-spinner"></i> Loading</div>
+        {{/if}}
     </div>
 </template>

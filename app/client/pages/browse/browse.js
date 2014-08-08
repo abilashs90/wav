@@ -7,6 +7,7 @@ app.defineComponent({
         var browseProducts = new Reactive();
         var matchedCategories = new Reactive();
         var loadListStatus = new Reactive(false);
+        var productDetails = new Reactive();
 
         function searchUrl(url){
             mainUrl = "http://api.flipkart.com"+url;
@@ -44,11 +45,17 @@ app.defineComponent({
                 },
                 loadListStatus:function(){
                     return loadListStatus.read();
+                },
+                productDetails: function () {
+                    return productDetails.read();
                 }
             },
             events: {
                 'click .p-browse-item': function(event) {
-                    itemId = event.currentTarget.id;                                        
+                    var itemId = event.currentTarget.id;           
+                    $(".overlay").show();                             
+                    console.log(this);
+                    productDetails.write(this);
                 },
                 'click .p-browse-category':function(event){
                     loadListStatus.write(false);

@@ -1,4 +1,25 @@
 <template name="browse">
+    <div class="overlay hidden">
+        <div class="product-details">
+            <div class="header">
+                <div class="product-image">
+                    <img src="{{productDetails.image125url}}" onerror="this.onerror=null;this.src='{{image125errorUrl}}'" />
+                </div>
+                <div class="product-title">
+                    <div>{{productDetails.title}}</div>
+                    <div>{{productDetails.subtitle}}</div>
+                </div>
+            </div>
+            <div class="buy-price-container">
+                <div class="price">
+                    {{productDetails.fsp}}
+                </div>
+                <div class="buy-button">
+                    <a href="http://api.flipkart.com/m/checkout/co?pid={{productDetails.listId}}" class="buy">Buy</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="p-browse">    
         <div class="p-browse-header">
             <div class="p-browse-fk-logo"><img src="../images/flipkart-logo-trans-small.png" /></div>

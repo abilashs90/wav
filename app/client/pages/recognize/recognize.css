@@ -1,3 +1,6 @@
+.p-recognize-header{
+	height: 36px;
+}
 .p-recognize-parent{
 	padding: 0;
 }
@@ -11,6 +14,7 @@
 
 .p-recognize-child li.ctitle{
 	padding:5px;
+	cursor:pointer;
 }
 .rec-list-cont{
 	padding: 5px;

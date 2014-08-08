@@ -34,15 +34,23 @@ app.defineComponent({
                 },
                 'click .p-input-big-camera':function(){
                     $(".confirmPic").show();
+                    $("#video").addClass("p-cap-vid");
                     app.ask('capturePic',function(text){
                         console.log(text);
                     });
                 },
                 'click .confirmPic':function(){
+                    $("#video").addClass("invisible");
+                    $("#canvas").addClass("p-cap-vid");
+                    $(".confirmPic").hide();
                      app.ask('getCapturedPic',function(text){
                         console.log(text);
-                        $("#video").hide();
-                        $(".confirmPic").hide();
+                        Meteor.http.post("http://api.flipkart.com/InternalApi/QuickKart/getUrl",{params:{"png":text}},function(err,succ){
+                            console.log(err,succ);
+                            $("#video").hide();                            
+                            $("#canvas").hide();
+                            app.action("redirect","recognize",{"url":"http"});
+                        });
                     });
                 },
                 'click #footer-search-action': function () {

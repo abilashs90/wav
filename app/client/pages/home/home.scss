@@ -4,6 +4,22 @@
 		top: 0;
 		left: 0;
 	}
+	.confirmPic{
+		display: none;
+		z-index: 220;
+		position: absolute;
+		left: 40%;
+		margin-top: -24px;
+	}
+	.p-cap-vid{
+		border: 1px solid rgb(121, 121, 121);
+		overflow: hidden;
+		max-width: 100%;
+		background: #B8B5B5;
+		box-shadow: 1px 1px #E6E6E6;
+		border-radius: 5px;
+		top: 15%;
+	}
 	.p-home-bigText{
 		text-align: center;
 		padding: 10px;

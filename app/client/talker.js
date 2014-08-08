@@ -49,18 +49,14 @@
 		context = canvas.getContext("2d"),
 		video = document.getElementById("video");
 
-		context.drawImage(video, 0, 0, 300, 300);
+		context.drawImage(video, 0, 0, 400, 300);
 		console.log(canvas);
 		var dataURL = canvas.toDataURL("image/png");
-		var data = atob( dataURL.substring( "data:image/png;base64,".length ) ),
-    		asArray = new Uint8Array(data.length);
+		
+		callback(dataURL);
+		$.ajax({
 
-		for( var i = 0, len = data.length; i < len; ++i ) {
-    		asArray[i] = data.charCodeAt(i);    
-		}
-
-		var blob = new Blob( [ asArray.buffer ], {type: "image/png"} );
-		callback((window.webkitURL || window.URL).createObjectURL( blob ));
+		});
 
 	});
 })();

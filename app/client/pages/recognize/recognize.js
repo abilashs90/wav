@@ -40,6 +40,10 @@ app.defineComponent({
            
             },
             events: {
+                'click .p-sub-cat' :function(event){
+                    var title = $(event.currentTarget).attr("data-title");
+                    app.action("redirect","browse",{query:title})
+                }
                
             },
             onRender:function(){

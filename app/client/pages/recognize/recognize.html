@@ -1,5 +1,8 @@
 <template name="recognize">
   	<div class="recognize">
+    <div class="p-recognize-header">
+      <img class="p-browse-fk-logo" src="/images/flipkart-logo-trans-small.png" />
+    </div>
     {{#if loadStatus}}
       <div class="rec-list-cont">
          <ul class="ul-no-style p-recognize-parent">
@@ -9,7 +12,7 @@
               <div class="title">{{title}}</div>
                 {{#each subCategory}}
                   <ul class="ul-no-style padding0 p-recognize-child">
-                    <li class="ctitle">{{title}}</li>
+                    <li class="ctitle p-sub-cat" data-title="{{title}}">{{title}}</li>
                   </ul>
                 {{/each}}
            </div>

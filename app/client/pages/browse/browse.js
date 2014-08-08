@@ -7,7 +7,7 @@ app.defineComponent({
         var browseProducts = new Reactive();
 
         function searchQuery (q) {
-            Meteor.http.call("GET", "http://api.flipkart.com/InternalApi/QuickKart/search?q="+q,function(error,searchResult){                
+            Meteor.http.call("GET", "http://api.flipkart.com/InternalApi/QuickKart/search?q="+q,function(error,searchResult){
                 loadStatus.write(true);
                 console.log(searchResult);
                 console.log(searchResult.data.RESPONSE);

@@ -1,17 +1,16 @@
 <template name="browse">
   <div class="p-browse">
     {{#if loadStatus}}
-    <div class="p-browse-header">
-      <div class="p-browse-fk-logo"><img src="/images/flipkart-logo-trans-small.png" /></div>
-      <div class="p-browse-seach-query">
-        <span class="query">{{query}}</span>
-        <span class="cancel"><a class="cancel" href="/">x</a></span>        
+      <div class="p-browse-header">
+        <img class="p-browse-fk-logo" src="/images/flipkart-logo-trans-small.png" />
+        <div class="p-browse-seach-query">
+          <span class="query">{{query}}</span>
+          <span class="cancel"><a class="cancel" href="/">x</a></span>
+        </div>
+        <div class="p-browse-menu"><span class="icon-ellipsis-v"></span></div>
       </div>
-      <div class="p-browse-menu"><span class="icon-ellipsis-v"></span></div>
-    </div>
-    <div>
       <div>
-        <!--{{#if browseProducts}}
+        {{#if browseProducts}}
           <ul class="p-browse-list">
             {{#each browseProducts}}
               <li class="p-browse-item">
@@ -24,12 +23,11 @@
                 </div>
               </li>
             {{/each}}
-          </ul> 
-          {{/if}} --> 
-        </div>
+          </ul>
+        {{/if}}
       </div>
-    {{else}}
-    <div class="g-loader"><i class="icon-spinner"></i> Loading</div>
-    {{/if}}
-  </div>
+      {{else}}
+        <div class="g-loader"><i class="icon-spinner"></i> Loading</div>
+      {{/if}}
+    </div>
 </template>

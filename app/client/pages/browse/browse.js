@@ -57,6 +57,9 @@ app.defineComponent({
                     $(".p-active-category").removeClass("p-active-category");
                     $currTar.addClass("p-active-category");
                     searchUrl(url);
+                },
+                'click .cancel-query':function(event){
+                    app.action('redirect','home');
                 }
             },
             onRender:function(){

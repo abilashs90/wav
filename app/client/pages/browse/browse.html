@@ -10,29 +10,32 @@
                 <span class="p-browse-find">Find {{query}} in</span>
                 <div class="p-browse-categories">
                     {{#each matchedCategories}}
-                        <div class="p-browse-category">{{title}}</div>
+                        <div class="p-browse-category" data-url="{{url}}">{{title}}</div>
                     {{/each}}
                 </div>
             {{/if}}
+	    {{#if loadListStatus}}
             {{#if browseProducts}}
                 <ul class="p-browse-list">
                     {{#each browseProducts}}
                         <li class="p-browse-item" id="{{id}}">
-                            <div class="i-block p-item-pic-cont">
+                            <div class="p-item-pic-cont">
                                 <img src={{image125url}} onerror="this.onerror=null;this.src='{{image125errorUrl}}';" class="item-pic-small">
                             </div>
-                            <div class="i-block p-browse-item-data">
+                            <div class="p-browse-item-data">
                                 <div class="title">{{title}}</div>
                                 <div class="sub-title">{{subtitle}}</div>
                                 <div class="price">
                                     <span class="selling-price">Rs. {{fsp}}</span>
                                     {{#if discountPercentage}}<span class="discount">({{discountPercentage}} % Off)</span>{{/if}}
                                 </div>
-                                <div>{{availability}}</div>
                             </div>
                         </li>
                     {{/each}}
                 </ul>
+            {{/if}}
+        {{else}}
+                <div class="g-loader"><i class="icon-spinner"></i> Loading</div>
             {{/if}}
         {{else}}
             <div class="g-loader"><i class="icon-spinner"></i> Loading</div>

@@ -32,6 +32,19 @@ app.defineComponent({
                         inputText.write(text);
                     });
                 },
+                'click .p-input-big-camera':function(){
+                    $(".confirmPic").show();
+                    app.ask('capturePic',function(text){
+                        console.log(text);
+                    });
+                },
+                'click .confirmPic':function(){
+                     app.ask('getCapturedPic',function(text){
+                        console.log(text);
+                        $("#video").hide();
+                        $(".confirmPic").hide();
+                    });
+                },
                 'click #footer-search-action': function () {
                   inputType.write('is-text-input');
                   inputStatus.write('is-not-listening');

@@ -1,5 +1,9 @@
 .p-home {
-
+	.p-captured-pic{
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
 	.p-home-bigText{
 		text-align: center;
 		padding: 10px;
@@ -27,7 +31,6 @@
 		left:0;
 		padding:10px;
 	}
-
 	.p-input-big-keyboard {
             font-size: 20px;
 	    margin-top: 30px;
@@ -42,6 +45,21 @@
 		height: 80px;
 		line-height: 80px;
 		box-shadow: 0 3px 6px rgba(0,0,0,0.35);
+	}
+	.p-input-big-camera{
+		cursor: pointer;
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		margin: 0 10px;
+		cursor:pointer;
+		border: none;
+		box-shadow: none;
+	}
+	.icon-camera{
+		color:#888;
+		font-size: 35px;
 	}
 	.p-key-cont{
 		font-size:15px;

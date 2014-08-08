@@ -9,7 +9,8 @@
   app.routes([
     {name: 'home', path: '/'},
     {name: 'product', path: '/product/:id'},
-    {name: 'browse', path: '/q/:query'}
+    {name: 'browse', path: '/q/:query'},
+    {name: 'recognize', path: '/r/:url'}
   ]);
 
 })(this);

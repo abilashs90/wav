@@ -1,0 +1,25 @@
+<template name="recognize">
+  	<div class="recognize">
+    {{#if loadStatus}}
+      <div class="rec-list-cont">
+         <ul class="ul-no-style p-recognize-parent">
+         {{#each categories}}
+          <li>
+            <div>
+              <div class="title">{{title}}</div>
+                {{#each subCategory}}
+                  <ul class="ul-no-style padding0 p-recognize-child">
+                    <li class="ctitle">{{title}}</li>
+                  </ul>
+                {{/each}}
+           </div>
+        </li>
+        {{/each}}
+    </ul>
+      </div>
+    {{else}}
+      <div class="g-loader"><i class="icon-spinner"></i> Loading</div>
+    {{/if}}
+   
+    </div>
+</template>

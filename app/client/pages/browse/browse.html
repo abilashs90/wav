@@ -5,27 +5,27 @@
       <div class="p-browse-fk-logo"><img src="/images/flipkart-logo-trans-small.png" /></div>
       <div class="p-browse-seach-query">
         <span class="query">{{query}}</span>
-        <span class="cancel"><a class="cancel" href="/">x</a></span>        
+        <span class="cancel"><a class="cancel" href="/">x</a></span>
       </div>
-      <div class="p-browse-menu"><span class="icon-ellipsis-v"></span></div>
     </div>
     <div>
       <div>
-        <!--{{#if browseProducts}}
+        {{#if browseProducts}}
           <ul class="p-browse-list">
             {{#each browseProducts}}
-              <li class="p-browse-item">
-                <div class="i-block">
-                  <img src={{image200}} class="item-pic-small">
+              <li class="p-browse-item" id="{{id}}">
+                <div class="i-block p-item-pic-cont">
+                  <img src={{image125url}} onerror="this.onerror=null;this.src='{{image125errorUrl}}';" class="item-pic-small">
                 </div>
-                <div class="i-block">
+                <div class="i-block p-browse-item-data">
                   <div>{{title}}</div>
+                  <div>{{subtitle}}</div>
                   <div>{{fsp}}</div>
                 </div>
               </li>
             {{/each}}
           </ul> 
-          {{/if}} --> 
+          {{/if}} 
         </div>
       </div>
     {{else}}

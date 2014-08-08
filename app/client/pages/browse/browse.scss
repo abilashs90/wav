@@ -4,11 +4,21 @@
 	padding: 0;
 }
 .p-browse-item{
-	padding:10px;
+	margin: 10px;
+	border: 1px solid rgb(226, 226, 226);
+	border-radius: 5px;
+	box-shadow: 1px 1px 0px #818181;
+	cursor:pointer;
+}
+.p-item-pic-cont{	
+	width: 100px;
+}
+.p-browse-item-data{
+	vertical-align: top;
+	padding: 10px;
 }
 .item-pic-small{
 	height: 100px;
-	width: 100px;
 	padding: 5px;
 }
 .p-browse-fk-logo {

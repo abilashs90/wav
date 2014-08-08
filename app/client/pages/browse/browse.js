@@ -11,7 +11,7 @@ app.defineComponent({
                 loadStatus.write(true);
                 console.log(searchResult);
                 console.log(searchResult.data.RESPONSE);
-                browseProducts = searchResult.data.RESPONSE.data.products;
+                browseProducts.write(searchResult.data.RESPONSE.data.products);
                 console.log(browseProducts);
             });
         }
@@ -30,7 +30,13 @@ app.defineComponent({
 
             },
             events: {
-
+                'click .p-browse-item': function(event) {
+                    itemId = event.currentTarget.id;
+                    console.log(event);
+                    setTimeout(function () {
+                            app.action('redirect', "product", {id: itemId});
+                    }, 1000);
+                }
             },
             onRender:function(){
                 var q = app.param('query');

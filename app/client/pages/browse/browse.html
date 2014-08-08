@@ -1,7 +1,7 @@
 <template name="browse">
     <div class="p-browse">    
         <div class="p-browse-header">
-            <div class="p-browse-fk-logo"><img src="/images/flipkart-logo-trans-small.png" /></div>
+            <div class="p-browse-fk-logo"><img src="../images/flipkart-logo-trans-small.png" /></div>
             <div class="p-browse-search-query-wrapper">
                 <div class="p-browse-search-query">
                     <span class="query">{{query}}</span>
@@ -16,10 +16,12 @@
                     {{#if matchedCategories}}
                         <div class="p-browse-categories">
                             {{#each matchedCategories}}
-                                <div class="p-browse-category">{{title}}</div>
+                                <div class="p-browse-category" data-url="{{url}}">{{title}}</div>
                             {{/each}}        
                         </div>
                     {{/if}}
+                    {{#if loadListStatus}}
+                   
                     {{#if browseProducts}}
                         <ul class="p-browse-list">
                             {{#each browseProducts}}
@@ -39,6 +41,10 @@
                                 </li>
                             {{/each}}
                         </ul> 
+                    {{/if}}
+                    {{else}}
+                    <div class="g-loader"><i class="icon-spinner"></i> Loading</div>
+                    
                     {{/if}}                     
                 </div>
             {{else}}

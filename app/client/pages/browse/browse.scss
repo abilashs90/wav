@@ -97,8 +97,17 @@
 	.p-browse-category {
 		border: 1px solid #000;
 		display: inline-block;
-		width: 30%;
-		height: 50px;		
+		padding: 5px;
 		white-space: nowrap;
+		border-radius: 10px;
+		margin: 3px;
+		background: #EEEBEB;
+		text-shadow: 1px 2px 1px #FFF;
+		cursor:pointer;
+	}
+	.p-active-category{
+		background: #333;
+		color: white;
+		text-shadow: 1px 1px 0px #000;
 	}
 }

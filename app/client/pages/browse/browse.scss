@@ -88,3 +88,17 @@
 		}		
 	}
 }
+
+.p-browse-categories {
+	background: #FFF;
+	padding: 10px;
+	margin-bottom: 10px;
+
+	.p-browse-category {
+		border: 1px solid #000;
+		display: inline-block;
+		width: 30%;
+		height: 50px;		
+		white-space: nowrap;
+	}
+}

@@ -13,6 +13,13 @@
         <div>
             {{#if loadStatus}}
                 <div>
+                    {{#if matchedCategories}}
+                        <div class="p-browse-categories">
+                            {{#each matchedCategories}}
+                                <div class="p-browse-category">{{title}}</div>
+                            {{/each}}        
+                        </div>
+                    {{/if}}
                     {{#if browseProducts}}
                         <ul class="p-browse-list">
                             {{#each browseProducts}}
